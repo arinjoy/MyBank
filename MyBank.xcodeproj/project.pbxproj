@@ -20,6 +20,13 @@
 		0E5B1E0A250C31D000A6A724 /* MyBank.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B1E09250C31D000A6A724 /* MyBank.strings */; };
 		0E5B1E0C250C32A900A6A724 /* UIAccessibility+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E0B250C32A900A6A724 /* UIAccessibility+Helpers.swift */; };
 		0E5B1E0E250C330000A6A724 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E0D250C330000A6A724 /* AccessibilityIdentifiers.swift */; };
+		0E5B1E11250C38AF00A6A724 /* ServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E10250C38AF00A6A724 /* ServicesProvider.swift */; };
+		0E5B1E13250C392200A6A724 /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E12250C392200A6A724 /* NetworkServiceType.swift */; };
+		0E5B1E15250C39A200A6A724 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E14250C39A200A6A724 /* Resource.swift */; };
+		0E5B1E17250C3A0700A6A724 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E16250C3A0700A6A724 /* ApiConstants.swift */; };
+		0E5B1E19250C3B2400A6A724 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E18250C3B2400A6A724 /* NetworkService.swift */; };
+		0E5B1E1C250C3B8600A6A724 /* Publisher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E1B250C3B8600A6A724 /* Publisher+Extensions.swift */; };
+		0E5B1E1E250C3C1B00A6A724 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E1D250C3C1B00A6A724 /* Scheduler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +57,13 @@
 		0E5B1E09250C31D000A6A724 /* MyBank.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MyBank.strings; sourceTree = "<group>"; };
 		0E5B1E0B250C32A900A6A724 /* UIAccessibility+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAccessibility+Helpers.swift"; sourceTree = "<group>"; };
 		0E5B1E0D250C330000A6A724 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		0E5B1E10250C38AF00A6A724 /* ServicesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesProvider.swift; sourceTree = "<group>"; };
+		0E5B1E12250C392200A6A724 /* NetworkServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
+		0E5B1E14250C39A200A6A724 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		0E5B1E16250C3A0700A6A724 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		0E5B1E18250C3B2400A6A724 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0E5B1E1B250C3B8600A6A724 /* Publisher+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extensions.swift"; sourceTree = "<group>"; };
+		0E5B1E1D250C3C1B00A6A724 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +108,7 @@
 				0E5B1DFA250C29F000A6A724 /* PresentationLayer */,
 				0E5B1DFB250C2A0200A6A724 /* DomainLayer */,
 				0E5B1DFC250C2A0B00A6A724 /* DataLayer */,
+				0E5B1E1A250C3B6D00A6A724 /* Support+Utils */,
 				0E5B1DE6250C246600A6A724 /* Info.plist */,
 			);
 			path = MyBank;
@@ -131,17 +146,19 @@
 		0E5B1DFC250C2A0B00A6A724 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
-				0E5B1DFD250C2A9B00A6A724 /* Resourse */,
+				0E5B1E16250C3A0700A6A724 /* ApiConstants.swift */,
+				0E5B1E10250C38AF00A6A724 /* ServicesProvider.swift */,
+				0E5B1E1F250C3C4B00A6A724 /* Network */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
 		};
-		0E5B1DFD250C2A9B00A6A724 /* Resourse */ = {
+		0E5B1DFD250C2A9B00A6A724 /* ResoureFiles */ = {
 			isa = PBXGroup;
 			children = (
 				0E5B1DFE250C2AB100A6A724 /* account_data.json */,
 			);
-			path = Resourse;
+			path = ResoureFiles;
 			sourceTree = "<group>";
 		};
 		0E5B1E00250C2B3800A6A724 /* Shared */ = {
@@ -179,6 +196,26 @@
 				0E5B1E0D250C330000A6A724 /* AccessibilityIdentifiers.swift */,
 			);
 			path = Accessibility;
+			sourceTree = "<group>";
+		};
+		0E5B1E1A250C3B6D00A6A724 /* Support+Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0E5B1E1B250C3B8600A6A724 /* Publisher+Extensions.swift */,
+				0E5B1E1D250C3C1B00A6A724 /* Scheduler.swift */,
+				0E5B1DFD250C2A9B00A6A724 /* ResoureFiles */,
+			);
+			path = "Support+Utils";
+			sourceTree = "<group>";
+		};
+		0E5B1E1F250C3C4B00A6A724 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0E5B1E12250C392200A6A724 /* NetworkServiceType.swift */,
+				0E5B1E14250C39A200A6A724 /* Resource.swift */,
+				0E5B1E18250C3B2400A6A724 /* NetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,12 +321,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E5B1E17250C3A0700A6A724 /* ApiConstants.swift in Sources */,
+				0E5B1E1E250C3C1B00A6A724 /* Scheduler.swift in Sources */,
+				0E5B1E13250C392200A6A724 /* NetworkServiceType.swift in Sources */,
+				0E5B1E11250C38AF00A6A724 /* ServicesProvider.swift in Sources */,
 				0E5B1E03250C2B4B00A6A724 /* Theme.swift in Sources */,
+				0E5B1E15250C39A200A6A724 /* Resource.swift in Sources */,
+				0E5B1E1C250C3B8600A6A724 /* Publisher+Extensions.swift in Sources */,
 				0E5B1E08250C30AA00A6A724 /* MyBank+StringKeys.swift in Sources */,
 				0E5B1DDD250C246500A6A724 /* ViewController.swift in Sources */,
 				0E5B1E06250C307600A6A724 /* LocalizationKeys.swift in Sources */,
 				0E5B1E0E250C330000A6A724 /* AccessibilityIdentifiers.swift in Sources */,
 				0E5B1E0C250C32A900A6A724 /* UIAccessibility+Helpers.swift in Sources */,
+				0E5B1E19250C3B2400A6A724 /* NetworkService.swift in Sources */,
 				0E5B1DD9250C246500A6A724 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
