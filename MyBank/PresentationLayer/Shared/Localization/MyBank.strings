@@ -1,0 +1,13 @@
+/* 
+  MyBank.strings
+  MyBank
+
+  Created by Arinjoy Biswas on 12/9/20.
+  Copyright © 2020 Arinjoy Biswas. All rights reserved.
+*/
+
+"account.details.heading" = "Account Details";
+"account.details.available.funds" = "Available funds";
+"account.details.balance" = "Account balance";
+"prending.transaction.prefix" = "PENDING";
+"find.atm.pin" = "Find ATM location";

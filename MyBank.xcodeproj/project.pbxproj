@@ -13,6 +13,13 @@
 		0E5B1DE2250C246600A6A724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B1DE1250C246600A6A724 /* Assets.xcassets */; };
 		0E5B1DE5250C246600A6A724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B1DE3250C246600A6A724 /* LaunchScreen.storyboard */; };
 		0E5B1DF0250C246700A6A724 /* MyBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1DEF250C246700A6A724 /* MyBankTests.swift */; };
+		0E5B1DFF250C2AB100A6A724 /* account_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B1DFE250C2AB100A6A724 /* account_data.json */; };
+		0E5B1E03250C2B4B00A6A724 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E02250C2B4B00A6A724 /* Theme.swift */; };
+		0E5B1E06250C307600A6A724 /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E05250C307600A6A724 /* LocalizationKeys.swift */; };
+		0E5B1E08250C30AA00A6A724 /* MyBank+StringKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E07250C30AA00A6A724 /* MyBank+StringKeys.swift */; };
+		0E5B1E0A250C31D000A6A724 /* MyBank.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B1E09250C31D000A6A724 /* MyBank.strings */; };
+		0E5B1E0C250C32A900A6A724 /* UIAccessibility+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E0B250C32A900A6A724 /* UIAccessibility+Helpers.swift */; };
+		0E5B1E0E250C330000A6A724 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E0D250C330000A6A724 /* AccessibilityIdentifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,13 @@
 		0E5B1DEB250C246700A6A724 /* MyBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5B1DEF250C246700A6A724 /* MyBankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBankTests.swift; sourceTree = "<group>"; };
 		0E5B1DF1250C246700A6A724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E5B1DFE250C2AB100A6A724 /* account_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = account_data.json; sourceTree = "<group>"; };
+		0E5B1E02250C2B4B00A6A724 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		0E5B1E05250C307600A6A724 /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
+		0E5B1E07250C30AA00A6A724 /* MyBank+StringKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyBank+StringKeys.swift"; sourceTree = "<group>"; };
+		0E5B1E09250C31D000A6A724 /* MyBank.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MyBank.strings; sourceTree = "<group>"; };
+		0E5B1E0B250C32A900A6A724 /* UIAccessibility+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAccessibility+Helpers.swift"; sourceTree = "<group>"; };
+		0E5B1E0D250C330000A6A724 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +91,9 @@
 		0E5B1DD7250C246500A6A724 /* MyBank */ = {
 			isa = PBXGroup;
 			children = (
-				0E5B1DD8250C246500A6A724 /* AppDelegate.swift */,
-				0E5B1DDC250C246500A6A724 /* ViewController.swift */,
-				0E5B1DDE250C246500A6A724 /* Main.storyboard */,
-				0E5B1DE1250C246600A6A724 /* Assets.xcassets */,
-				0E5B1DE3250C246600A6A724 /* LaunchScreen.storyboard */,
+				0E5B1DFA250C29F000A6A724 /* PresentationLayer */,
+				0E5B1DFB250C2A0200A6A724 /* DomainLayer */,
+				0E5B1DFC250C2A0B00A6A724 /* DataLayer */,
 				0E5B1DE6250C246600A6A724 /* Info.plist */,
 			);
 			path = MyBank;
@@ -94,6 +106,79 @@
 				0E5B1DF1250C246700A6A724 /* Info.plist */,
 			);
 			path = MyBankTests;
+			sourceTree = "<group>";
+		};
+		0E5B1DFA250C29F000A6A724 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				0E5B1E00250C2B3800A6A724 /* Shared */,
+				0E5B1DD8250C246500A6A724 /* AppDelegate.swift */,
+				0E5B1DDC250C246500A6A724 /* ViewController.swift */,
+				0E5B1DDE250C246500A6A724 /* Main.storyboard */,
+				0E5B1DE1250C246600A6A724 /* Assets.xcassets */,
+				0E5B1DE3250C246600A6A724 /* LaunchScreen.storyboard */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		0E5B1DFB250C2A0200A6A724 /* DomainLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DomainLayer;
+			sourceTree = "<group>";
+		};
+		0E5B1DFC250C2A0B00A6A724 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				0E5B1DFD250C2A9B00A6A724 /* Resourse */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		0E5B1DFD250C2A9B00A6A724 /* Resourse */ = {
+			isa = PBXGroup;
+			children = (
+				0E5B1DFE250C2AB100A6A724 /* account_data.json */,
+			);
+			path = Resourse;
+			sourceTree = "<group>";
+		};
+		0E5B1E00250C2B3800A6A724 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0E5B1E01250C2B3E00A6A724 /* Theme */,
+				0E5B1E04250C305E00A6A724 /* Localization */,
+				0E5B1E0F250C33E300A6A724 /* Accessibility */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		0E5B1E01250C2B3E00A6A724 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				0E5B1E02250C2B4B00A6A724 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		0E5B1E04250C305E00A6A724 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				0E5B1E05250C307600A6A724 /* LocalizationKeys.swift */,
+				0E5B1E07250C30AA00A6A724 /* MyBank+StringKeys.swift */,
+				0E5B1E09250C31D000A6A724 /* MyBank.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		0E5B1E0F250C33E300A6A724 /* Accessibility */ = {
+			isa = PBXGroup;
+			children = (
+				0E5B1E0B250C32A900A6A724 /* UIAccessibility+Helpers.swift */,
+				0E5B1E0D250C330000A6A724 /* AccessibilityIdentifiers.swift */,
+			);
+			path = Accessibility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +263,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E5B1DE5250C246600A6A724 /* LaunchScreen.storyboard in Resources */,
+				0E5B1E0A250C31D000A6A724 /* MyBank.strings in Resources */,
+				0E5B1DFF250C2AB100A6A724 /* account_data.json in Resources */,
 				0E5B1DE2250C246600A6A724 /* Assets.xcassets in Resources */,
 				0E5B1DE0250C246500A6A724 /* Main.storyboard in Resources */,
 			);
@@ -197,7 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E5B1E03250C2B4B00A6A724 /* Theme.swift in Sources */,
+				0E5B1E08250C30AA00A6A724 /* MyBank+StringKeys.swift in Sources */,
 				0E5B1DDD250C246500A6A724 /* ViewController.swift in Sources */,
+				0E5B1E06250C307600A6A724 /* LocalizationKeys.swift in Sources */,
+				0E5B1E0E250C330000A6A724 /* AccessibilityIdentifiers.swift in Sources */,
+				0E5B1E0C250C32A900A6A724 /* UIAccessibility+Helpers.swift in Sources */,
 				0E5B1DD9250C246500A6A724 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
