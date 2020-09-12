@@ -20,7 +20,7 @@ extension Resource {
         
         let url = ApiConstants.remoteAccountDataURL
         
-        // Dropbx query param `dl=1` is appended to make the api call work
-        return Resource<FullAccountDetailsResponse>(url: url, parameters: ["dl":1])
+        // Dropbox query param `dl=1` is appended to make the api call work
+        return Resource<FullAccountDetailsResponse>(url: url, parameters: ["dl": 1])
     }
 }

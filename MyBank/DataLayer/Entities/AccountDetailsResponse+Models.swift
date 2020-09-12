@@ -46,9 +46,9 @@ struct Transaction: Decodable {
     // Such as cleared date, posted date, processed date etc.
     // Here it is simple as the main effective date to convey back to the user on UI.
     // We could treat this as `timestamp` too with time components in it.
-    let date: Date
+    let timestamp: Date
     
-    let description: String
+    let narrative: String
     let amount: Decimal
     
     /// Optional atm identifier if the transaction was done via an ATM
@@ -56,8 +56,8 @@ struct Transaction: Decodable {
     
     private enum CodingKeys: String, CodingKey {
         case identifier = "id"
-        case date = "effectiveDate"
-        case description
+        case timestamp = "effectiveDate"
+        case narrative = "description"
         case amount
         case atmId
     }

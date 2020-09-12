@@ -19,7 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        window?.rootViewController = UINavigationController(rootViewController: ViewController())
+        
+        guard let rootVC = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(withIdentifier: "AccountDetailsVC") as? AccountDetailsViewController
+        else {
+            fatalError("`AccountDetailsViewController` could not be constructed out of main storyboard")
+        }
+        
+        window?.rootViewController = UINavigationController(rootViewController: rootVC)
+        
         window?.makeKeyAndVisible()
         return true
     }
