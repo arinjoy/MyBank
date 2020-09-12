@@ -16,7 +16,9 @@ final class TransactionCell: UITableViewCell, NibProvidable, ReusableView {
     
     @IBOutlet weak var atmIconImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionStackView: UIStackView!
     @IBOutlet weak var amountLabel: UILabel!
+    
     
     // MARK: - Lifecycle
     
@@ -48,7 +50,8 @@ final class TransactionCell: UITableViewCell, NibProvidable, ReusableView {
     private func applyStyles() {
         contentView.backgroundColor = Theme.Color.greyBackground
         descriptionLabel.font = Theme.Font.body
-        descriptionLabel.lineBreakMode = .byTruncatingTail
+        descriptionLabel.numberOfLines = 0
         amountLabel.font = Theme.Font.subheading
+        amountLabel.numberOfLines = 1
     }
 }

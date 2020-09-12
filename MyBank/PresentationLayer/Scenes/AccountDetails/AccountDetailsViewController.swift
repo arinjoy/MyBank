@@ -72,10 +72,11 @@ final class AccountDetailsViewController: UIViewController {
     
     private func configureTableView() {
         tableView.backgroundColor = Theme.Color.tealBackground
-        tableView.registerClass(cellClass: TransactionCell.self)
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = TransactionCell.approximateRowHeight
         tableView.separatorStyle = .none
         
+        tableView.registerNib(cellClass: TransactionCell.self)
         tableView.dataSource = dataSource
         
         tableView.refreshControl = refreshControl
