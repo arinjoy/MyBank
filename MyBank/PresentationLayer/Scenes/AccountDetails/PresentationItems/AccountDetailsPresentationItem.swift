@@ -13,13 +13,3 @@ struct AccountDetailsPresentationItem {
     let number: String
     let amount: String
 }
-
-extension AccountDetailsPresentationItem: Hashable {
-    static func == (lhs: AccountDetailsPresentationItem, rhs: AccountDetailsPresentationItem) -> Bool {
-        return lhs.number == rhs.number
-    }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(number)
-    }
-}

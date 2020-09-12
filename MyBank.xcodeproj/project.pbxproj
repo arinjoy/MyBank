@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E59B719250CF6D500DF7162 /* TransctionSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E59B717250CF6D500DF7162 /* TransctionSectionHeaderView.xib */; };
+		0E59B71A250CF6D500DF7162 /* TransctionSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E59B718250CF6D500DF7162 /* TransctionSectionHeaderView.swift */; };
 		0E5B1DD9250C246500A6A724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1DD8250C246500A6A724 /* AppDelegate.swift */; };
 		0E5B1DDD250C246500A6A724 /* AccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1DDC250C246500A6A724 /* AccountDetailsViewController.swift */; };
 		0E5B1DE0250C246500A6A724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B1DDE250C246500A6A724 /* Main.storyboard */; };
@@ -39,7 +41,7 @@
 		0E5B1E3D250CB94500A6A724 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E3C250CB94500A6A724 /* DataSource.swift */; };
 		0E5B1E3F250CB96C00A6A724 /* DataSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E3E250CB96C00A6A724 /* DataSection.swift */; };
 		0E5B1E42250CBEEB00A6A724 /* AccountDetailsPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E41250CBEEB00A6A724 /* AccountDetailsPresenting.swift */; };
-		0E5B1E45250CBF8500A6A724 /* AccountDetailsTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E44250CBF8500A6A724 /* AccountDetailsTransformer.swift */; };
+		0E5B1E45250CBF8500A6A724 /* TransactionListTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E44250CBF8500A6A724 /* TransactionListTransformer.swift */; };
 		0E5B1E47250CC03100A6A724 /* DataTransforming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E46250CC03100A6A724 /* DataTransforming.swift */; };
 		0E5B1E49250CC2B000A6A724 /* AccountDetailsPresentationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E48250CC2B000A6A724 /* AccountDetailsPresentationItem.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E59B717250CF6D500DF7162 /* TransctionSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransctionSectionHeaderView.xib; sourceTree = "<group>"; };
+		0E59B718250CF6D500DF7162 /* TransctionSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransctionSectionHeaderView.swift; sourceTree = "<group>"; };
 		0E5B1DD5250C246500A6A724 /* MyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5B1DD8250C246500A6A724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E5B1DDC250C246500A6A724 /* AccountDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +95,7 @@
 		0E5B1E3C250CB94500A6A724 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		0E5B1E3E250CB96C00A6A724 /* DataSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSection.swift; sourceTree = "<group>"; };
 		0E5B1E41250CBEEB00A6A724 /* AccountDetailsPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsPresenting.swift; sourceTree = "<group>"; };
-		0E5B1E44250CBF8500A6A724 /* AccountDetailsTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsTransformer.swift; sourceTree = "<group>"; };
+		0E5B1E44250CBF8500A6A724 /* TransactionListTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListTransformer.swift; sourceTree = "<group>"; };
 		0E5B1E46250CC03100A6A724 /* DataTransforming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransforming.swift; sourceTree = "<group>"; };
 		0E5B1E48250CC2B000A6A724 /* AccountDetailsPresentationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsPresentationItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -285,6 +289,8 @@
 		0E5B1E2D250C633800A6A724 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				0E59B718250CF6D500DF7162 /* TransctionSectionHeaderView.swift */,
+				0E59B717250CF6D500DF7162 /* TransctionSectionHeaderView.xib */,
 				0E5B1E29250C62D900A6A724 /* TransactionCell.swift */,
 				0E5B1E2A250C62D900A6A724 /* TransactionCell.xib */,
 				0E5B1E38250CA99700A6A724 /* AccountDetailsHeaderCell.swift */,
@@ -305,7 +311,7 @@
 		0E5B1E43250CBF7200A6A724 /* Transformer */ = {
 			isa = PBXGroup;
 			children = (
-				0E5B1E44250CBF8500A6A724 /* AccountDetailsTransformer.swift */,
+				0E5B1E44250CBF8500A6A724 /* TransactionListTransformer.swift */,
 			);
 			path = Transformer;
 			sourceTree = "<group>";
@@ -401,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E5B1DE5250C246600A6A724 /* LaunchScreen.storyboard in Resources */,
+				0E59B719250CF6D500DF7162 /* TransctionSectionHeaderView.xib in Resources */,
 				0E5B1E0A250C31D000A6A724 /* MyBank.strings in Resources */,
 				0E5B1E2C250C62D900A6A724 /* TransactionCell.xib in Resources */,
 				0E5B1DFF250C2AB100A6A724 /* account_data.json in Resources */,
@@ -429,6 +436,7 @@
 				0E5B1E1E250C3C1B00A6A724 /* Scheduler.swift in Sources */,
 				0E5B1E24250C416300A6A724 /* AccountDetailsResponse+Models.swift in Sources */,
 				0E5B1E3A250CA99700A6A724 /* AccountDetailsHeaderCell.swift in Sources */,
+				0E59B71A250CF6D500DF7162 /* TransctionSectionHeaderView.swift in Sources */,
 				0E5B1E3F250CB96C00A6A724 /* DataSection.swift in Sources */,
 				0E5B1E13250C392200A6A724 /* NetworkServiceType.swift in Sources */,
 				0E5B1E11250C38AF00A6A724 /* ServicesProvider.swift in Sources */,
@@ -446,7 +454,7 @@
 				0E5B1E0E250C330000A6A724 /* AccessibilityIdentifiers.swift in Sources */,
 				0E5B1E2B250C62D900A6A724 /* TransactionCell.swift in Sources */,
 				0E5B1E0C250C32A900A6A724 /* UIAccessibility+Helpers.swift in Sources */,
-				0E5B1E45250CBF8500A6A724 /* AccountDetailsTransformer.swift in Sources */,
+				0E5B1E45250CBF8500A6A724 /* TransactionListTransformer.swift in Sources */,
 				0E5B1E19250C3B2400A6A724 /* NetworkService.swift in Sources */,
 				0E5B1DD9250C246500A6A724 /* AppDelegate.swift in Sources */,
 				0E5B1E3D250CB94500A6A724 /* DataSource.swift in Sources */,

@@ -23,12 +23,12 @@ final class AccountDetailsViewController: UIViewController {
     
     // MARK: - Private Properties
 
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, TransactionPresentationItem>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, TransactionPresentationItem>
+    typealias DataSource = UITableViewDiffableDataSource<GroupedTransactionSection, TransactionPresentationItem>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<GroupedTransactionSection, TransactionPresentationItem>
     
-    private var dataSections: [Section] = []
+    private var dataSections: [GroupedTransactionSection] = []
     
-    private lazy var dataSource: UITableViewDiffableDataSource<Section, TransactionPresentationItem> = {
+    private lazy var dataSource: UITableViewDiffableDataSource<GroupedTransactionSection, TransactionPresentationItem> = {
         return makeDataSource()
     }()
     
@@ -64,8 +64,8 @@ final class AccountDetailsViewController: UIViewController {
                 print(result)
                 switch result {
                 case .success(let response):
-                    let transformer = AccountDetailsTransformer()
-                    self?.dataSections = transformer.transform(input: response)
+                    let transformer = TransactionListTransformer()
+                    self?.dataSections = transformer.transform(input: response.clearedTransactions)
                     self?.updateTransactionList()
                 default: break
                 }
@@ -80,10 +80,17 @@ final class AccountDetailsViewController: UIViewController {
         tableView.backgroundColor = Theme.Color.tealBackground
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = TransactionCell.approximateRowHeight
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = TransctionSectionHeaderView.approximateRowHeight
         tableView.separatorStyle = .none
         
         tableView.registerNib(cellClass: TransactionCell.self)
+        
+        let nib = UINib(nibName: "TransctionSectionHeaderView", bundle: nil)
+        tableView.register(nib, forHeaderFooterViewReuseIdentifier: TransctionSectionHeaderView.reuseIdentifer)
         tableView.dataSource = dataSource
+        tableView.delegate = self
+        self.tableView.tableFooterView = UIView()
         
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshAccountDetails), for: .valueChanged)
@@ -95,8 +102,8 @@ final class AccountDetailsViewController: UIViewController {
     }
 
     
-    private func makeDataSource() -> UITableViewDiffableDataSource<Section, TransactionPresentationItem> {
-        return UITableViewDiffableDataSource(
+    private func makeDataSource() -> UITableViewDiffableDataSource<GroupedTransactionSection, TransactionPresentationItem> {
+        let dataSource = DataSource(
             tableView: tableView,
             cellProvider: { tableView, indexPath, item in
                 guard let cell = tableView.dequeueReusableCell(withClass: TransactionCell.self) else {
@@ -107,14 +114,30 @@ final class AccountDetailsViewController: UIViewController {
                 return cell
             }
         )
+        return dataSource
     }
     
     private func updateTransactionList(animate: Bool = false) {
         var snapshot = Snapshot()
         snapshot.appendSections(dataSections)
         dataSections.forEach { section in
-          snapshot.appendItems(section.items, toSection: section)
+          snapshot.appendItems(section.transactionItems, toSection: section)
         }
         dataSource.apply(snapshot, animatingDifferences: animate)
+    }
+}
+
+
+extension AccountDetailsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard
+            let headerView = tableView.dequeueReusableHeaderFooterView(
+                withIdentifier: TransctionSectionHeaderView.reuseIdentifer) as? TransctionSectionHeaderView
+        else {
+            return UITableViewHeaderFooterView()
+        }
+        headerView.configure(withPresentationItem: dataSections[section].headerItem)
+        return headerView
     }
 }

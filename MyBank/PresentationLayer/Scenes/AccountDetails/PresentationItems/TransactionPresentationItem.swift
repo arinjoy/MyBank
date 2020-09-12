@@ -8,10 +8,7 @@
 
 import Foundation
 
-protocol Some {}
-
 struct TransactionPresentationItem {
-    
     let id: String
     let description: String
     let amount: String
