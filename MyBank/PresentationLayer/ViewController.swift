@@ -7,15 +7,38 @@
 //
 
 import UIKit
+import Combine
 
 class ViewController: UIViewController {
+    
+    private var cancellables: [AnyCancellable] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        
         view.backgroundColor = .yellow
+        
+        // TEST data loading works via network service
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
+        
+        // TODO: Handle all of these via VIPER or MVVM logic.
+        
+        let networkService = ServicesProvider.defaultProvider().network
+
+        let somePublisher = networkService
+            .load(Resource<FullAccountDetailsResponse>.accountDetails(forAccountId: ""))
+            .subscribe(on: Scheduler.background)
+            .receive(on: Scheduler.main)
+            .eraseToAnyPublisher()
+
+        somePublisher
+            .sink(receiveValue: { result in
+                print(result)
+            })
+            .store(in: &cancellables)
+        
     }
-
-
 }
 

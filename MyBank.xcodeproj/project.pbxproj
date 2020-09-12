@@ -27,6 +27,8 @@
 		0E5B1E19250C3B2400A6A724 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E18250C3B2400A6A724 /* NetworkService.swift */; };
 		0E5B1E1C250C3B8600A6A724 /* Publisher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E1B250C3B8600A6A724 /* Publisher+Extensions.swift */; };
 		0E5B1E1E250C3C1B00A6A724 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E1D250C3C1B00A6A724 /* Scheduler.swift */; };
+		0E5B1E22250C3FBE00A6A724 /* Resource+AccountDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E21250C3FBE00A6A724 /* Resource+AccountDetailsResponse.swift */; };
+		0E5B1E24250C416300A6A724 /* AccountDetailsResponse+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E23250C416300A6A724 /* AccountDetailsResponse+Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		0E5B1E18250C3B2400A6A724 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0E5B1E1B250C3B8600A6A724 /* Publisher+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extensions.swift"; sourceTree = "<group>"; };
 		0E5B1E1D250C3C1B00A6A724 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		0E5B1E21250C3FBE00A6A724 /* Resource+AccountDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+AccountDetailsResponse.swift"; sourceTree = "<group>"; };
+		0E5B1E23250C416300A6A724 /* AccountDetailsResponse+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountDetailsResponse+Models.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 		0E5B1DFC250C2A0B00A6A724 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				0E5B1E20250C3FA100A6A724 /* Entities */,
 				0E5B1E16250C3A0700A6A724 /* ApiConstants.swift */,
 				0E5B1E10250C38AF00A6A724 /* ServicesProvider.swift */,
 				0E5B1E1F250C3C4B00A6A724 /* Network */,
@@ -216,6 +221,15 @@
 				0E5B1E18250C3B2400A6A724 /* NetworkService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		0E5B1E20250C3FA100A6A724 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				0E5B1E21250C3FBE00A6A724 /* Resource+AccountDetailsResponse.swift */,
+				0E5B1E23250C416300A6A724 /* AccountDetailsResponse+Models.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +337,7 @@
 			files = (
 				0E5B1E17250C3A0700A6A724 /* ApiConstants.swift in Sources */,
 				0E5B1E1E250C3C1B00A6A724 /* Scheduler.swift in Sources */,
+				0E5B1E24250C416300A6A724 /* AccountDetailsResponse+Models.swift in Sources */,
 				0E5B1E13250C392200A6A724 /* NetworkServiceType.swift in Sources */,
 				0E5B1E11250C38AF00A6A724 /* ServicesProvider.swift in Sources */,
 				0E5B1E03250C2B4B00A6A724 /* Theme.swift in Sources */,
@@ -330,6 +345,7 @@
 				0E5B1E1C250C3B8600A6A724 /* Publisher+Extensions.swift in Sources */,
 				0E5B1E08250C30AA00A6A724 /* MyBank+StringKeys.swift in Sources */,
 				0E5B1DDD250C246500A6A724 /* ViewController.swift in Sources */,
+				0E5B1E22250C3FBE00A6A724 /* Resource+AccountDetailsResponse.swift in Sources */,
 				0E5B1E06250C307600A6A724 /* LocalizationKeys.swift in Sources */,
 				0E5B1E0E250C330000A6A724 /* AccessibilityIdentifiers.swift in Sources */,
 				0E5B1E0C250C32A900A6A724 /* UIAccessibility+Helpers.swift in Sources */,
