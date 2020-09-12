@@ -24,6 +24,9 @@ final class NetworkService: NetworkServiceType {
             return .just(.failure(NetworkError.unknown))
         }
         
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.dateDecodingStrategy = .formatted(DateFormatter(format: "DD/MM/YYYY"))
+        
         return URLSession.shared.dataTaskPublisher(for: request)
             .mapError { error in
                 // 1. Check for network connection related error first
@@ -46,7 +49,7 @@ final class NetworkService: NetworkServiceType {
                 // decoded as JSON as next step
                 return data
             }
-            .decode(type: T.self, decoder: JSONDecoder())
+            .decode(type: T.self, decoder: jsonDecoder)
             .map {
                 // 5. JSON decoding is successful and return decoded entity/model
                 return .success($0)

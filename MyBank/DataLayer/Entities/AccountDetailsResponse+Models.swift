@@ -44,9 +44,9 @@ struct Transaction: Decodable {
     
     // In realistic environment there could different types of dates related to a transaction.
     // Such as cleared date, posted date, processed date etc.
-    // Here it is simple as the main effective date to convery back to the user on UI.
+    // Here it is simple as the main effective date to convey back to the user on UI.
     // We could treat this as `timestamp` too with time components in it.
-    let date: String
+    let date: Date
     
     let description: String
     let amount: Decimal

@@ -29,6 +29,7 @@
 		0E5B1E1E250C3C1B00A6A724 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E1D250C3C1B00A6A724 /* Scheduler.swift */; };
 		0E5B1E22250C3FBE00A6A724 /* Resource+AccountDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E21250C3FBE00A6A724 /* Resource+AccountDetailsResponse.swift */; };
 		0E5B1E24250C416300A6A724 /* AccountDetailsResponse+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E23250C416300A6A724 /* AccountDetailsResponse+Models.swift */; };
+		0E5B1E26250C55DB00A6A724 /* DateFormatter+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E25250C55DB00A6A724 /* DateFormatter+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		0E5B1E1D250C3C1B00A6A724 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		0E5B1E21250C3FBE00A6A724 /* Resource+AccountDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+AccountDetailsResponse.swift"; sourceTree = "<group>"; };
 		0E5B1E23250C416300A6A724 /* AccountDetailsResponse+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountDetailsResponse+Models.swift"; sourceTree = "<group>"; };
+		0E5B1E25250C55DB00A6A724 /* DateFormatter+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 		0E5B1E1A250C3B6D00A6A724 /* Support+Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0E5B1E25250C55DB00A6A724 /* DateFormatter+Helpers.swift */,
 				0E5B1E1B250C3B8600A6A724 /* Publisher+Extensions.swift */,
 				0E5B1E1D250C3C1B00A6A724 /* Scheduler.swift */,
 				0E5B1DFD250C2A9B00A6A724 /* ResoureFiles */,
@@ -335,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E5B1E26250C55DB00A6A724 /* DateFormatter+Helpers.swift in Sources */,
 				0E5B1E17250C3A0700A6A724 /* ApiConstants.swift in Sources */,
 				0E5B1E1E250C3C1B00A6A724 /* Scheduler.swift in Sources */,
 				0E5B1E24250C416300A6A724 /* AccountDetailsResponse+Models.swift in Sources */,
