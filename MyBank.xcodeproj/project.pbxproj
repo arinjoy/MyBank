@@ -34,6 +34,10 @@
 		0E5B1E2C250C62D900A6A724 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B1E2A250C62D900A6A724 /* TransactionCell.xib */; };
 		0E5B1E2F250C6A9200A6A724 /* TransactionPresentationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E2E250C6A9200A6A724 /* TransactionPresentationItem.swift */; };
 		0E5B1E31250C6BF600A6A724 /* UITableView+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E30250C6BF600A6A724 /* UITableView+Common.swift */; };
+		0E5B1E3A250CA99700A6A724 /* AccountDetailsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E38250CA99700A6A724 /* AccountDetailsHeaderCell.swift */; };
+		0E5B1E3B250CA99700A6A724 /* AccountDetailsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B1E39250CA99700A6A724 /* AccountDetailsHeaderCell.xib */; };
+		0E5B1E3D250CB94500A6A724 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E3C250CB94500A6A724 /* DataSource.swift */; };
+		0E5B1E3F250CB96C00A6A724 /* DataSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E3E250CB96C00A6A724 /* DataSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +82,10 @@
 		0E5B1E2A250C62D900A6A724 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		0E5B1E2E250C6A9200A6A724 /* TransactionPresentationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPresentationItem.swift; sourceTree = "<group>"; };
 		0E5B1E30250C6BF600A6A724 /* UITableView+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Common.swift"; sourceTree = "<group>"; };
+		0E5B1E38250CA99700A6A724 /* AccountDetailsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsHeaderCell.swift; sourceTree = "<group>"; };
+		0E5B1E39250CA99700A6A724 /* AccountDetailsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountDetailsHeaderCell.xib; sourceTree = "<group>"; };
+		0E5B1E3C250CB94500A6A724 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		0E5B1E3E250CB96C00A6A724 /* DataSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +191,7 @@
 				0E5B1E04250C305E00A6A724 /* Localization */,
 				0E5B1E0F250C33E300A6A724 /* Accessibility */,
 				0E5B1E30250C6BF600A6A724 /* UITableView+Common.swift */,
+				0E5B1E40250CB9F300A6A724 /* ListDataSource */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -257,6 +266,7 @@
 			children = (
 				0E5B1E2D250C633800A6A724 /* UIComponents */,
 				0E5B1DDC250C246500A6A724 /* AccountDetailsViewController.swift */,
+				0E5B1E2E250C6A9200A6A724 /* TransactionPresentationItem.swift */,
 			);
 			path = AccountDetails;
 			sourceTree = "<group>";
@@ -266,9 +276,19 @@
 			children = (
 				0E5B1E29250C62D900A6A724 /* TransactionCell.swift */,
 				0E5B1E2A250C62D900A6A724 /* TransactionCell.xib */,
-				0E5B1E2E250C6A9200A6A724 /* TransactionPresentationItem.swift */,
+				0E5B1E38250CA99700A6A724 /* AccountDetailsHeaderCell.swift */,
+				0E5B1E39250CA99700A6A724 /* AccountDetailsHeaderCell.xib */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		0E5B1E40250CB9F300A6A724 /* ListDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				0E5B1E3C250CB94500A6A724 /* DataSource.swift */,
+				0E5B1E3E250CB96C00A6A724 /* DataSection.swift */,
+			);
+			path = ListDataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +377,7 @@
 				0E5B1E2C250C62D900A6A724 /* TransactionCell.xib in Resources */,
 				0E5B1DFF250C2AB100A6A724 /* account_data.json in Resources */,
 				0E5B1DE2250C246600A6A724 /* Assets.xcassets in Resources */,
+				0E5B1E3B250CA99700A6A724 /* AccountDetailsHeaderCell.xib in Resources */,
 				0E5B1DE0250C246500A6A724 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +400,8 @@
 				0E5B1E17250C3A0700A6A724 /* ApiConstants.swift in Sources */,
 				0E5B1E1E250C3C1B00A6A724 /* Scheduler.swift in Sources */,
 				0E5B1E24250C416300A6A724 /* AccountDetailsResponse+Models.swift in Sources */,
+				0E5B1E3A250CA99700A6A724 /* AccountDetailsHeaderCell.swift in Sources */,
+				0E5B1E3F250CB96C00A6A724 /* DataSection.swift in Sources */,
 				0E5B1E13250C392200A6A724 /* NetworkServiceType.swift in Sources */,
 				0E5B1E11250C38AF00A6A724 /* ServicesProvider.swift in Sources */,
 				0E5B1E03250C2B4B00A6A724 /* Theme.swift in Sources */,
@@ -394,6 +417,7 @@
 				0E5B1E0C250C32A900A6A724 /* UIAccessibility+Helpers.swift in Sources */,
 				0E5B1E19250C3B2400A6A724 /* NetworkService.swift in Sources */,
 				0E5B1DD9250C246500A6A724 /* AppDelegate.swift in Sources */,
+				0E5B1E3D250CB94500A6A724 /* DataSource.swift in Sources */,
 				0E5B1E2F250C6A9200A6A724 /* TransactionPresentationItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
