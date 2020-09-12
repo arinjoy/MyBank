@@ -8,6 +8,8 @@
 
 import Foundation
 
+protocol Some {}
+
 struct TransactionPresentationItem {
     
     let id: String

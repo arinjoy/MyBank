@@ -22,6 +22,11 @@ final class AccountDetailsViewController: UIViewController {
     }()
     
     // MARK: - Private Properties
+
+    typealias DataSource = UICollectionViewDiffableDataSource<Section, TransactionPresentationItem>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, TransactionPresentationItem>
+    
+    private var dataSections: [Section] = []
     
     private lazy var dataSource: UITableViewDiffableDataSource<Section, TransactionPresentationItem> = {
         return makeDataSource()
@@ -59,8 +64,9 @@ final class AccountDetailsViewController: UIViewController {
                 print(result)
                 switch result {
                 case .success(let response):
-                    self?.updateTransactionList(
-                        withPresentationItems: response.clearedTransactions.map { TransactionPresentationItem($0) })
+                    let transformer = AccountDetailsTransformer()
+                    self?.dataSections = transformer.transform(input: response)
+                    self?.updateTransactionList()
                 default: break
                 }
             })
@@ -87,11 +93,7 @@ final class AccountDetailsViewController: UIViewController {
     private func refreshAccountDetails() {
         // TODO: presenter.load....
     }
-    
-    enum Section: CaseIterable {
-        case accountDetailsHeader
-        case transactionList
-    }
+
     
     private func makeDataSource() -> UITableViewDiffableDataSource<Section, TransactionPresentationItem> {
         return UITableViewDiffableDataSource(
@@ -107,14 +109,12 @@ final class AccountDetailsViewController: UIViewController {
         )
     }
     
-    private func updateTransactionList(
-        withPresentationItems presentationItems: [TransactionPresentationItem],
-        animate: Bool = false
-    ) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, TransactionPresentationItem>()
-        snapshot.appendSections(Section.allCases)
-        snapshot.appendItems(presentationItems, toSection: .transactionList)
+    private func updateTransactionList(animate: Bool = false) {
+        var snapshot = Snapshot()
+        snapshot.appendSections(dataSections)
+        dataSections.forEach { section in
+          snapshot.appendItems(section.items, toSection: section)
+        }
         dataSource.apply(snapshot, animatingDifferences: animate)
     }
 }
-
