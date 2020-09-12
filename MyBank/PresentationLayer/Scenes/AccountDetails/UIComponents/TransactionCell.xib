@@ -16,44 +16,44 @@
                 <rect key="frame" x="0.0" y="0.0" width="532" height="109"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SF3-c4-ys0" userLabel="Description Stack View">
-                        <rect key="frame" x="16" y="5" width="500" height="99"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FindUsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xA0-je-7fX" userLabel="AtmIcon">
-                                <rect key="frame" x="0.0" y="19.5" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" priority="999" constant="60" id="QgC-ZC-MZA"/>
-                                    <constraint firstAttribute="width" constant="60" id="d2T-Gc-D6h"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="&lt;&lt;Narrative long Description&gt;&gt;" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEM-6W-mrB" userLabel="DescriptionLabel">
-                                <rect key="frame" x="60" y="29" width="166.5" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="&lt;&lt;Amount value&gt;&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gft-Ql-iIF" userLabel="AmountLabel">
-                                <rect key="frame" x="226.5" y="39.5" width="273.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                    </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FindUsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xA0-je-7fX" userLabel="AtmIcon">
+                        <rect key="frame" x="16" y="24.5" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="QgC-ZC-MZA"/>
+                            <constraint firstAttribute="width" constant="60" id="d2T-Gc-D6h"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="&lt;&lt;Narrative long Description&gt;&gt;" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEM-6W-mrB" userLabel="DescriptionLabel">
+                        <rect key="frame" x="84" y="8" width="242" height="93"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="&lt;&lt;Amount value&gt;&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gft-Ql-iIF" userLabel="AmountLabel">
+                        <rect key="frame" x="368.5" y="44.5" width="147.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="SF3-c4-ys0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="SHf-Kc-1fM"/>
-                    <constraint firstAttribute="trailing" secondItem="SF3-c4-ys0" secondAttribute="trailing" constant="16" id="UIq-Io-53P"/>
-                    <constraint firstAttribute="bottom" secondItem="SF3-c4-ys0" secondAttribute="bottom" constant="5" id="cPf-2h-ePy"/>
-                    <constraint firstItem="SF3-c4-ys0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="eKY-2J-n5E"/>
+                    <constraint firstItem="wEM-6W-mrB" firstAttribute="leading" secondItem="xA0-je-7fX" secondAttribute="trailing" constant="8" id="0Tj-EN-gZq"/>
+                    <constraint firstItem="Gft-Ql-iIF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PSV-Na-Sra"/>
+                    <constraint firstItem="xA0-je-7fX" firstAttribute="centerY" secondItem="wEM-6W-mrB" secondAttribute="centerY" id="Wme-S9-jaA"/>
+                    <constraint firstItem="wEM-6W-mrB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gLx-Da-DVE"/>
+                    <constraint firstItem="xA0-je-7fX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="hm2-gz-NFL"/>
+                    <constraint firstItem="Gft-Ql-iIF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wEM-6W-mrB" secondAttribute="trailing" constant="20" id="k1Q-c1-Bjh"/>
+                    <constraint firstAttribute="trailing" secondItem="Gft-Ql-iIF" secondAttribute="trailing" constant="16" id="l1V-KE-mO4"/>
+                    <constraint firstAttribute="bottom" secondItem="wEM-6W-mrB" secondAttribute="bottom" constant="8" id="mK0-FZ-sM7"/>
+                    <constraint firstItem="wEM-6W-mrB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="nIL-19-vbd"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="amountLabel" destination="Gft-Ql-iIF" id="fba-fX-MTu"/>
                 <outlet property="atmIconImageView" destination="xA0-je-7fX" id="qKi-Nk-1AO"/>
+                <outlet property="atmIconWidthConstraint" destination="d2T-Gc-D6h" id="m94-cH-3of"/>
                 <outlet property="descriptionLabel" destination="wEM-6W-mrB" id="Us8-y5-LBU"/>
-                <outlet property="descriptionStackView" destination="SF3-c4-ys0" id="nXw-IJ-BRf"/>
             </connections>
             <point key="canvasLocation" x="424.63768115942031" y="40.513392857142854"/>
         </tableViewCell>

@@ -16,8 +16,10 @@ final class TransactionCell: UITableViewCell, NibProvidable, ReusableView {
     
     @IBOutlet weak var atmIconImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var descriptionStackView: UIStackView!
     @IBOutlet weak var amountLabel: UILabel!
+    
+    
+    @IBOutlet weak var atmIconWidthConstraint: NSLayoutConstraint!
     
     
     // MARK: - Lifecycle
@@ -26,19 +28,19 @@ final class TransactionCell: UITableViewCell, NibProvidable, ReusableView {
         super.awakeFromNib()
         
         applyStyles()
-        atmIconImageView.isHidden = true
+        atmIconWidthConstraint.constant = 0
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        atmIconImageView.isHidden = true
+        atmIconWidthConstraint.constant = 0
     }
     
     // MARK: - Configuration
     
     func configure(withPresentationItem item: TransactionPresentationItem) {
-        atmIconImageView.isHidden = !item.isAtmTransaction
+        atmIconWidthConstraint.constant = item.isAtmTransaction ? 50 : 0
         descriptionLabel.text = item.description
         amountLabel.text = item.amount
         
