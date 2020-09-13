@@ -50,6 +50,8 @@
 		0EA6D939250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D938250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift */; };
 		0EA6D93B250DA9CF0086DCB7 /* GroupedTransactionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D93A250DA9CF0086DCB7 /* GroupedTransactionsSection.swift */; };
 		0EA6D93E250DB3D80086DCB7 /* NumberFormatter+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D93D250DB3D80086DCB7 /* NumberFormatter+Helpers.swift */; };
+		0EA6D941250DCDF40086DCB7 /* LocalStubbedDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D940250DCDF40086DCB7 /* LocalStubbedDataService.swift */; };
+		0EA6D943250DDC470086DCB7 /* account_data_modified.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA6D942250DDC470086DCB7 /* account_data_modified.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		0EA6D938250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSectionHeaderPresentationItem.swift; sourceTree = "<group>"; };
 		0EA6D93A250DA9CF0086DCB7 /* GroupedTransactionsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedTransactionsSection.swift; sourceTree = "<group>"; };
 		0EA6D93D250DB3D80086DCB7 /* NumberFormatter+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Helpers.swift"; sourceTree = "<group>"; };
+		0EA6D940250DCDF40086DCB7 /* LocalStubbedDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStubbedDataService.swift; sourceTree = "<group>"; };
+		0EA6D942250DDC470086DCB7 /* account_data_modified.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = account_data_modified.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				0E5B1DFE250C2AB100A6A724 /* account_data.json */,
+				0EA6D942250DDC470086DCB7 /* account_data_modified.json */,
 			);
 			path = ResoureFiles;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 				0E5B1E12250C392200A6A724 /* NetworkServiceType.swift */,
 				0E5B1E14250C39A200A6A724 /* Resource.swift */,
 				0E5B1E18250C3B2400A6A724 /* NetworkService.swift */,
+				0EA6D940250DCDF40086DCB7 /* LocalStubbedDataService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -434,6 +440,7 @@
 			files = (
 				0E5B1DE5250C246600A6A724 /* LaunchScreen.storyboard in Resources */,
 				0E59B719250CF6D500DF7162 /* TransctionSectionHeaderView.xib in Resources */,
+				0EA6D943250DDC470086DCB7 /* account_data_modified.json in Resources */,
 				0E5B1E0A250C31D000A6A724 /* MyBank.strings in Resources */,
 				0E5B1E2C250C62D900A6A724 /* TransactionCell.xib in Resources */,
 				0E5B1DFF250C2AB100A6A724 /* account_data.json in Resources */,
@@ -480,6 +487,7 @@
 				0E5B1E06250C307600A6A724 /* LocalizationKeys.swift in Sources */,
 				0E5B1E47250CC03100A6A724 /* DataTransforming.swift in Sources */,
 				0E5B1E0E250C330000A6A724 /* AccessibilityIdentifiers.swift in Sources */,
+				0EA6D941250DCDF40086DCB7 /* LocalStubbedDataService.swift in Sources */,
 				0E5B1E2B250C62D900A6A724 /* TransactionCell.swift in Sources */,
 				0EA6D93B250DA9CF0086DCB7 /* GroupedTransactionsSection.swift in Sources */,
 				0E5B1E0C250C32A900A6A724 /* UIAccessibility+Helpers.swift in Sources */,

@@ -47,7 +47,11 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
         
         let presenter = AccountDetailsPresenter(
             interactor: AccoundDetailsInteractor(
-                networkService: ServicesProvider.defaultProvider().network
+                
+                // TODO: change here to point from realNetworks vs. local Stub
+                // Use `ServicesProvider.defaultProvider().network
+                
+                networkService: ServicesProvider.localStubbedProvider().network
             )
         )
         presenter.display = self
@@ -66,32 +70,6 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
         presenter.viewDidBecomeReady()
         
         presenter.loadAccountDetailsAndTransactions(isRereshingNeeded: true)
-        
-//        // TEST data loading works via network service
-//        cancellables.forEach { $0.cancel() }
-//        cancellables.removeAll()
-//
-//        // TODO: Handle all of these via VIPER or MVVM logic.
-//
-//        let networkService = ServicesProvider.defaultProvider().network
-//
-//        let somePublisher = networkService
-//            .load(Resource<FullAccountDetailsResponse>.accountDetails(forAccountId: ""))
-//            .subscribe(on: Scheduler.background)
-//            .receive(on: Scheduler.main)
-//            .eraseToAnyPublisher()
-//
-//        somePublisher
-//            .sink(receiveValue: { [weak self] result in
-//                print(result)
-//                switch result {
-//                case .success(let response):
-//                    self?.updateTransactionList()
-//                default: break
-//                }
-//            })
-//            .store(in: &cancellables)
-        
     }
     
     // MARK: - AccountDetailsDisplay
@@ -107,7 +85,6 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
     func updateTransactionList() {
         var snapshot = Snapshot()
         snapshot.appendSections(presenter.transactionGroupsDataSource)
-        print(presenter.transactionGroupsDataSource)
         presenter.transactionGroupsDataSource.forEach { section in
           snapshot.appendItems(section.transactionItems, toSection: section)
         }
@@ -159,7 +136,6 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
     
     @objc
     private func refreshAccountDetails() {
-        // TODO: presenter.load....
         presenter.loadAccountDetailsAndTransactions(isRereshingNeeded: true)
     }
     

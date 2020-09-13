@@ -16,8 +16,15 @@ struct Resource<T: Decodable> {
     /// The optional parmeters to construct the full URL path
     let parameters: [String: CustomStringConvertible]
     
+    /// An indicator if we are loading the the data locally from a `Stubbed JSON` file
+    /// Helpful for debugging, building/unit testing
+    let isLocalStub: Bool
+    
     
     var request: URLRequest? {
+        
+        guard !isLocalStub else { return nil }
+        
         guard var components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
             return nil
         }
@@ -32,8 +39,9 @@ struct Resource<T: Decodable> {
 
     // MARK: - Init
     
-    init(url: URL, parameters: [String: CustomStringConvertible] = [:]) {
+    init(url: URL, parameters: [String: CustomStringConvertible] = [:], isLocalStub: Bool = false) {
         self.url = url
         self.parameters = parameters
+        self.isLocalStub = isLocalStub
     }
 }

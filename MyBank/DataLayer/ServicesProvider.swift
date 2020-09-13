@@ -14,7 +14,12 @@ class ServicesProvider {
 
     /// The underlying network service to load HTTP network based data
     let network: NetworkServiceType
+    
+    init(network: NetworkServiceType) {
+        self.network = network
+    }
 
+    /// The deafult provider used for production code to fetch from remote
     static func defaultProvider() -> ServicesProvider {
         let sessionConfig = URLSessionConfiguration.ephemeral
         
@@ -28,8 +33,13 @@ class ServicesProvider {
         
         return ServicesProvider(network: network)
     }
-
-    init(network: NetworkServiceType) {
-        self.network = network
+    
+    /// The helping provider to fetch locally from stub JSON file
+    static func localStubbedProvider() -> ServicesProvider {
+        // Slightly modified version with more recent dates used for testing
+        let localStubbedNetwork = LocalStubbedDataService(withLocalFile: "account_data_modified")
+        return ServicesProvider(network: localStubbedNetwork)
     }
+
+
 }
