@@ -28,23 +28,23 @@ final class TransactionCell: UITableViewCell, NibProvidable, ReusableView {
         super.awakeFromNib()
         
         applyStyles()
+        isAccessibilityElement = true
         atmIconWidthConstraint.constant = 0
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
         atmIconWidthConstraint.constant = 0
     }
     
     // MARK: - Configuration
     
     func configure(withPresentationItem item: TransactionPresentationItem) {
-        atmIconWidthConstraint.constant = item.isAtmTransaction ? 50 : 0
+        atmIconWidthConstraint.constant = item.atmIcon != nil ? 50 : 0
         descriptionLabel.attributedText = item.description
-        amountLabel.text = item.amount
+        amountLabel.text = item.amountText
         
-        // TODO: configure accessibility
+        item.accessibility?.apply(to: self)
     }
     
     // MARK: - Private Helpers
@@ -59,5 +59,7 @@ final class TransactionCell: UITableViewCell, NibProvidable, ReusableView {
         amountLabel.font = Theme.Font.subheading
         amountLabel.textColor = Theme.Color.primaryText
         amountLabel.numberOfLines = 1
+        
+        atmIconImageView.tintColor = Theme.Color.secondaryText
     }
 }

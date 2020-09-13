@@ -34,7 +34,7 @@
         {
             "id": "7ecc19e1a0be36ba2c6f05d06b5d3058",
             "description": "Wdl ATM CBA ATM TOWN HALL SQUARE NSW 253432 AUS",
-            "effectiveDate": "04/12/2015",
+            "effectiveDate": "04/12/2019",
             "amount": -50.00,
             "atmId": "137483"
         },
@@ -47,13 +47,13 @@
         {
             "id": "ef087651eb482bae4624478696f4ad4f",
             "description": "Transfer from REBECCA SHAW<br/>Lorem ipsum 😄 😎 🙏🏾",
-            "effectiveDate": "03/12/2015",
+            "effectiveDate": "03/01/2016",
             "amount": 150.00
         },
         {
             "id": "8cd283d8b7bacc277f2bae5e26ce6d1e",
             "description": "Savings",
-            "effectiveDate": "01/12/2015",
+            "effectiveDate": "03/01/2016",
             "amount": 200.00
         },
         {

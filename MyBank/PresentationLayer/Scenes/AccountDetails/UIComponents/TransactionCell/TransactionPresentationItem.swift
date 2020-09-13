@@ -7,12 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
 struct TransactionPresentationItem {
+    
     let id: String
     let description: NSAttributedString
-    let amount: String
-    let isAtmTransaction: Bool
+    let amountText: String
+    
+    /// `nil` would indicate its a non-atm transaction
+    let atmIcon: UIImage?
+    
+    let accessibility: AccessibilityConfiguration?
 }
 
 extension TransactionPresentationItem: Hashable {

@@ -59,9 +59,22 @@ struct TransactionListTransformer: DataTransforming {
             attributedDescription = attributedText
         }
         
-        return TransactionPresentationItem(id: transaction.id,
-                                           description: attributedDescription,
-                                           amount: signedAmount,
-                                           isAtmTransaction:transaction.atmLocation != nil)
+        let isAtmTransaction = transaction.atmLocation != nil
+        
+        let accessibility = AccessibilityConfiguration(
+            identifier: "accessibilityId.account.details.transaction.cell",
+            label: UIAccessibility.createCombinedAccessibilityLabel(
+                from: [transaction.isPending ? "Pending transaction" : "Cleared transaction",
+                       transaction.narrativeText,
+                       "amount \(signedAmount)"]),
+                hint: isAtmTransaction ? "Double click to see the ATM location on map" : "",
+                traits: isAtmTransaction ? .button : .staticText)
+        
+        return TransactionPresentationItem(
+            id: transaction.id,
+            description: attributedDescription,
+            amountText: signedAmount,
+            atmIcon: isAtmTransaction ? UIImage(named: "FindUsIcon")! : nil,
+            accessibility: accessibility)
     }
 }

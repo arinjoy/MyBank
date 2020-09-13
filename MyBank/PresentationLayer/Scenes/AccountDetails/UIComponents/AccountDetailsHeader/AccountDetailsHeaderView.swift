@@ -43,7 +43,9 @@ class AccountDetailsHeaderView: UIView {
         nib.instantiate(withOwner: self, options: nil)
         contentView.frame = bounds
         addSubview(contentView)
+        
         applyStyles()
+        isAccessibilityElement = true
     }
     
     // MARK: - Configuration
@@ -63,6 +65,7 @@ class AccountDetailsHeaderView: UIView {
     // MARK: - Private Helpers
     
     private func applyStyles() {
+        accountTypeIconView.tintColor = Theme.Color.sunflower
         contentView.backgroundColor = Theme.Color.tealBackground
         bottomContainerView.backgroundColor = Theme.Color.greyBackground
         separatorLineView.backgroundColor = Theme.Color.tealBackground.withAlphaComponent(0.3)
@@ -80,7 +83,5 @@ class AccountDetailsHeaderView: UIView {
         
         balanceAmountLabel.font = Theme.Font.subheading
         balanceAmountLabel.textColor = Theme.Color.secondaryText
-        
-        isAccessibilityElement = true
     }
 }
