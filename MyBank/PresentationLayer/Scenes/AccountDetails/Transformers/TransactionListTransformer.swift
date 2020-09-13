@@ -17,9 +17,11 @@ struct TransactionListTransformer: DataTransforming {
         for group in input {
             let items = group.transactions.map { tranformTransaction($0) }
 
-            let formattedDate = DateFormattingHelper.mediumDate.string(from: group.date)
+            let formattedDateText = DateFormattingHelper.mediumDate.string(from: group.date)
+            let daysAgoText = (DateComponentsHelper.yearMonthDayCompact.string(from: group.date, to: Date()) ?? "") + " ago"
+  
             let section = GroupedTransactionSection(
-                headerItem: TransctionSectionHeaderPresentationItem(title: formattedDate, subtitle: "12 days ago"),
+                headerItem: TransctionSectionHeaderPresentationItem(title: formattedDateText, subtitle: daysAgoText),
                 transactionItems: items)
             sections.append(section)
         }

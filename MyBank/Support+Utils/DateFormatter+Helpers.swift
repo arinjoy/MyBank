@@ -8,28 +8,30 @@
 
 import Foundation
 
-extension DateFormatter {
-    convenience init(format: String) {
-        self.init()
-        dateFormat = format
-        locale = Locale(identifier: "en-AU")
-    }
-}
-
-extension String {
-    func toDate(format: String) -> Date? {
-        return DateFormatter(format: format).date(from: self)
-    }
-}
-
 class DateFormattingHelper {
 
-    // MARK: - Formatters
-
     static let mediumDate: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_AU")
-        dateFormatter.dateFormat = "dd MMM yyyy"
-        return dateFormatter
+        let fomatter = DateFormatter()
+        fomatter.locale = Locale(identifier: "en_AU")
+        fomatter.dateFormat = "dd MMM yyyy"
+        return fomatter
+    }()
+    
+    static let shortDate: DateFormatter = {
+        let fomatter = DateFormatter()
+        fomatter.locale = Locale(identifier: "en_AU")
+        fomatter.dateFormat = "d/MM/yyyy"
+        return fomatter
+    }()
+}
+
+class DateComponentsHelper {
+    
+    static let yearMonthDayCompact: DateComponentsFormatter = {
+        let fomatter = DateComponentsFormatter()
+        fomatter.maximumUnitCount = 1
+        fomatter.unitsStyle = .full
+        fomatter.allowedUnits = [.year, .month, .day]
+        return fomatter
     }()
 }

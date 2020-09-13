@@ -21,6 +21,8 @@ final class TransctionSectionHeaderView: UITableViewHeaderFooterView {
     // MARK: - Configuration
     
     func configure(withPresentationItem item: TransctionSectionHeaderPresentationItem) {
+        titleLabel.font = Theme.Font.subheading
+        subtitleLabel.font = Theme.Font.body
         titleLabel.text = item.title
         subtitleLabel.text = item.subtitle
     }
