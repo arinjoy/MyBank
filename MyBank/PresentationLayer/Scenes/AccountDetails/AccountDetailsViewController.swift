@@ -19,7 +19,8 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
     
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = Theme.Color.tint
+        refreshControl.backgroundColor = Theme.Color.tealBackground
+        refreshControl.tintColor = Theme.Color.primaryText
         return refreshControl
     }()
     
@@ -97,9 +98,12 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
     }
     
     func showLoadingIndicator() {
-        // TODO:
         refreshControl.isHidden = false
         refreshControl.beginRefreshing()
+        
+        if UIAccessibility.isVoiceOverRunning {
+            UIAccessibility.post(notification: .announcement, argument: "Refreshing account details")
+        }
     }
     
     func hideLoadingIndicator() {
