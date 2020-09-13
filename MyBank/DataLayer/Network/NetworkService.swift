@@ -25,7 +25,7 @@ final class NetworkService: NetworkServiceType {
         }
         
         let jsonDecoder = JSONDecoder()
-        jsonDecoder.dateDecodingStrategy = .formatted(DateFormatter(format: "DD/MM/YYYY"))
+        jsonDecoder.dateDecodingStrategy = .formatted(DateFormatter(format: "d/MM/yyyy"))
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .mapError { error in

@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import Combine
+//import Combine
 
-final class AccountDetailsViewController: UIViewController {
-    
+final class AccountDetailsViewController: UIViewController, AccountDetailsDisplay {
+
     // MARK: - Outlets & UI elements
     
     @IBOutlet weak var tableView: UITableView!
@@ -26,50 +26,113 @@ final class AccountDetailsViewController: UIViewController {
     typealias DataSource = UITableViewDiffableDataSource<GroupedTransactionSection, TransactionPresentationItem>
     typealias Snapshot = NSDiffableDataSourceSnapshot<GroupedTransactionSection, TransactionPresentationItem>
     
-    private var dataSections: [GroupedTransactionSection] = []
+//    private var dataSections: [GroupedTransactionSection] = []
     
     private lazy var dataSource: UITableViewDiffableDataSource<GroupedTransactionSection, TransactionPresentationItem> = {
         return makeDataSource()
     }()
     
-    private var cancellables: [AnyCancellable] = []
+//    private var cancellables: [AnyCancellable] = []
+    
+    // MARK: - Presenter
+    
+    /// The presenter conforming to the `AccountDetailsPresenting`
+    private lazy var presenter: AccountDetailsPresenting = {
+        
+        /**
+         Tech note:
+         A chain of depdendency injection layer by layer, and each layer is individually unit tested
+         Ideally this depdendency injection can be done via 3rd party library like `Swinject`
+         */
+        
+        let presenter = AccountDetailsPresenter(
+            interactor: AccoundDetailsInteractor(
+                networkService: ServicesProvider.defaultProvider().network
+            )
+        )
+        presenter.display = self
+        return presenter
+    }()
 
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.title = "Account Details"
 
         view.backgroundColor = .yellow
         
         configureTableView()
         
-        // TEST data loading works via network service
-        cancellables.forEach { $0.cancel() }
-        cancellables.removeAll()
+        presenter.viewDidBecomeReady()
         
-        // TODO: Handle all of these via VIPER or MVVM logic.
+        presenter.loadAccountDetailsAndTransactions(isRereshingNeeded: true)
         
-        let networkService = ServicesProvider.defaultProvider().network
-
-        let somePublisher = networkService
-            .load(Resource<FullAccountDetailsResponse>.accountDetails(forAccountId: ""))
-            .subscribe(on: Scheduler.background)
-            .receive(on: Scheduler.main)
-            .eraseToAnyPublisher()
-
-        somePublisher
-            .sink(receiveValue: { [weak self] result in
-                print(result)
-                switch result {
-                case .success(let response):
-                    self?.updateTransactionList()
-                default: break
-                }
-            })
-            .store(in: &cancellables)
+//        // TEST data loading works via network service
+//        cancellables.forEach { $0.cancel() }
+//        cancellables.removeAll()
+//
+//        // TODO: Handle all of these via VIPER or MVVM logic.
+//
+//        let networkService = ServicesProvider.defaultProvider().network
+//
+//        let somePublisher = networkService
+//            .load(Resource<FullAccountDetailsResponse>.accountDetails(forAccountId: ""))
+//            .subscribe(on: Scheduler.background)
+//            .receive(on: Scheduler.main)
+//            .eraseToAnyPublisher()
+//
+//        somePublisher
+//            .sink(receiveValue: { [weak self] result in
+//                print(result)
+//                switch result {
+//                case .success(let response):
+//                    self?.updateTransactionList()
+//                default: break
+//                }
+//            })
+//            .store(in: &cancellables)
         
+    }
+    
+    // MARK: - AccountDetailsDisplay
+    
+    func setTitle(_ title: String) {
+        self.navigationItem.title = title
+    }
+    
+    func updateAccountDetailsHeader() {
+        // TODO: Attach data to the table view top big header
+    }
+    
+    func updateTransactionList() {
+        var snapshot = Snapshot()
+        snapshot.appendSections(presenter.transactionGroupsDataSource)
+        print(presenter.transactionGroupsDataSource)
+        presenter.transactionGroupsDataSource.forEach { section in
+          snapshot.appendItems(section.transactionItems, toSection: section)
+        }
+        dataSource.apply(snapshot, animatingDifferences: false)
+    }
+    
+    func showLoadingIndicator() {
+        // TODO:
+        refreshControl.isHidden = false
+        refreshControl.beginRefreshing()
+    }
+    
+    func hideLoadingIndicator() {
+        // TODO:
+        refreshControl.endRefreshing()
+        refreshControl.isHidden = true
+    }
+    
+    func showError(title: String, message: String, dismissTitle: String) {
+        let alertController = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: dismissTitle, style: .cancel))
+        present(alertController, animated: true, completion: nil)
     }
     
     // MARK: - Private Helpers
@@ -97,8 +160,8 @@ final class AccountDetailsViewController: UIViewController {
     @objc
     private func refreshAccountDetails() {
         // TODO: presenter.load....
+        presenter.loadAccountDetailsAndTransactions(isRereshingNeeded: true)
     }
-
     
     private func makeDataSource() -> UITableViewDiffableDataSource<GroupedTransactionSection, TransactionPresentationItem> {
         let dataSource = DataSource(
@@ -114,28 +177,18 @@ final class AccountDetailsViewController: UIViewController {
         )
         return dataSource
     }
-    
-    private func updateTransactionList(animate: Bool = false) {
-        var snapshot = Snapshot()
-        snapshot.appendSections(dataSections)
-        dataSections.forEach { section in
-          snapshot.appendItems(section.transactionItems, toSection: section)
-        }
-        dataSource.apply(snapshot, animatingDifferences: animate)
-    }
 }
-
 
 extension AccountDetailsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard
+        guard presenter.transactionGroupsDataSource.count > section,
             let headerView = tableView.dequeueReusableHeaderFooterView(
                 withIdentifier: TransctionSectionHeaderView.reuseIdentifer) as? TransctionSectionHeaderView
         else {
             return UITableViewHeaderFooterView()
         }
-        headerView.configure(withPresentationItem: dataSections[section].headerItem)
+        headerView.configure(withPresentationItem: presenter.transactionGroupsDataSource[section].headerItem)
         return headerView
     }
 }

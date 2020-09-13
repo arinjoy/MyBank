@@ -8,11 +8,6 @@
 
 import UIKit
 
-struct TransctionSectionHeaderPresentationItem {
-    let title: String
-    let subtitle: String
-}
-
 final class TransctionSectionHeaderView: UITableViewHeaderFooterView {
     
     static let reuseIdentifer: String = String(describing: self)

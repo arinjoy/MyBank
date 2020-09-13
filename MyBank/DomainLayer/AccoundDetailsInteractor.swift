@@ -96,7 +96,7 @@ final class AccoundDetailsInteractor: AccountDetailsInteracting {
         
         let sanitizedDescription = transaction.narrative
             .trimmingCharacters(in: .whitespacesAndNewlines)
-            .replacingOccurrences(of: "<br/>", with: "/n")
+            .replacingOccurrences(of: "<br/>", with: "\n")
         
         let atmLocation = atmLocations.filter { $0.identifier == transaction.atmId }.first
         

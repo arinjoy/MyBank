@@ -46,6 +46,10 @@
 		0E5B1E45250CBF8500A6A724 /* TransactionListTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E44250CBF8500A6A724 /* TransactionListTransformer.swift */; };
 		0E5B1E47250CC03100A6A724 /* DataTransforming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E46250CC03100A6A724 /* DataTransforming.swift */; };
 		0E5B1E49250CC2B000A6A724 /* AccountDetailsPresentationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E48250CC2B000A6A724 /* AccountDetailsPresentationItem.swift */; };
+		0EA6D937250D9CDB0086DCB7 /* AccountDetailsDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D936250D9CDB0086DCB7 /* AccountDetailsDisplay.swift */; };
+		0EA6D939250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D938250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift */; };
+		0EA6D93B250DA9CF0086DCB7 /* GroupedTransactionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D93A250DA9CF0086DCB7 /* GroupedTransactionsSection.swift */; };
+		0EA6D93E250DB3D80086DCB7 /* NumberFormatter+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D93D250DB3D80086DCB7 /* NumberFormatter+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +106,10 @@
 		0E5B1E44250CBF8500A6A724 /* TransactionListTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListTransformer.swift; sourceTree = "<group>"; };
 		0E5B1E46250CC03100A6A724 /* DataTransforming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransforming.swift; sourceTree = "<group>"; };
 		0E5B1E48250CC2B000A6A724 /* AccountDetailsPresentationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsPresentationItem.swift; sourceTree = "<group>"; };
+		0EA6D936250D9CDB0086DCB7 /* AccountDetailsDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsDisplay.swift; sourceTree = "<group>"; };
+		0EA6D938250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSectionHeaderPresentationItem.swift; sourceTree = "<group>"; };
+		0EA6D93A250DA9CF0086DCB7 /* GroupedTransactionsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedTransactionsSection.swift; sourceTree = "<group>"; };
+		0EA6D93D250DB3D80086DCB7 /* NumberFormatter+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +261,7 @@
 		0E5B1E1A250C3B6D00A6A724 /* Support+Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0EA6D93D250DB3D80086DCB7 /* NumberFormatter+Helpers.swift */,
 				0E5B1E25250C55DB00A6A724 /* DateFormatter+Helpers.swift */,
 				0E5B1E1B250C3B8600A6A724 /* Publisher+Extensions.swift */,
 				0E5B1E1D250C3C1B00A6A724 /* Scheduler.swift */,
@@ -291,11 +300,12 @@
 		0E5B1E28250C611000A6A724 /* AccountDetails */ = {
 			isa = PBXGroup;
 			children = (
-				0E5B1E4A250CC2C500A6A724 /* PresentationItems */,
-				0E5B1E43250CBF7200A6A724 /* Transformer */,
 				0E5B1E2D250C633800A6A724 /* UIComponents */,
+				0E5B1E4A250CC2C500A6A724 /* PresentationItems */,
+				0E5B1E43250CBF7200A6A724 /* Transformers */,
 				0E5B1DDC250C246500A6A724 /* AccountDetailsViewController.swift */,
 				0E5B1E41250CBEEB00A6A724 /* AccountDetailsPresenter.swift */,
+				0EA6D936250D9CDB0086DCB7 /* AccountDetailsDisplay.swift */,
 			);
 			path = AccountDetails;
 			sourceTree = "<group>";
@@ -322,12 +332,12 @@
 			path = ListDataSource;
 			sourceTree = "<group>";
 		};
-		0E5B1E43250CBF7200A6A724 /* Transformer */ = {
+		0E5B1E43250CBF7200A6A724 /* Transformers */ = {
 			isa = PBXGroup;
 			children = (
 				0E5B1E44250CBF8500A6A724 /* TransactionListTransformer.swift */,
 			);
-			path = Transformer;
+			path = Transformers;
 			sourceTree = "<group>";
 		};
 		0E5B1E4A250CC2C500A6A724 /* PresentationItems */ = {
@@ -335,6 +345,8 @@
 			children = (
 				0E5B1E48250CC2B000A6A724 /* AccountDetailsPresentationItem.swift */,
 				0E5B1E2E250C6A9200A6A724 /* TransactionPresentationItem.swift */,
+				0EA6D938250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift */,
+				0EA6D93A250DA9CF0086DCB7 /* GroupedTransactionsSection.swift */,
 			);
 			path = PresentationItems;
 			sourceTree = "<group>";
@@ -464,16 +476,20 @@
 				0E59B720250D01CB00DF7162 /* DomainModels.swift in Sources */,
 				0E5B1DDD250C246500A6A724 /* AccountDetailsViewController.swift in Sources */,
 				0E5B1E22250C3FBE00A6A724 /* Resource+AccountDetailsResponse.swift in Sources */,
+				0EA6D93E250DB3D80086DCB7 /* NumberFormatter+Helpers.swift in Sources */,
 				0E5B1E06250C307600A6A724 /* LocalizationKeys.swift in Sources */,
 				0E5B1E47250CC03100A6A724 /* DataTransforming.swift in Sources */,
 				0E5B1E0E250C330000A6A724 /* AccessibilityIdentifiers.swift in Sources */,
 				0E5B1E2B250C62D900A6A724 /* TransactionCell.swift in Sources */,
+				0EA6D93B250DA9CF0086DCB7 /* GroupedTransactionsSection.swift in Sources */,
 				0E5B1E0C250C32A900A6A724 /* UIAccessibility+Helpers.swift in Sources */,
+				0EA6D939250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift in Sources */,
 				0E5B1E45250CBF8500A6A724 /* TransactionListTransformer.swift in Sources */,
 				0E5B1E19250C3B2400A6A724 /* NetworkService.swift in Sources */,
 				0E5B1DD9250C246500A6A724 /* AppDelegate.swift in Sources */,
 				0E5B1E3D250CB94500A6A724 /* DataSource.swift in Sources */,
 				0E59B71D250CFF6300DF7162 /* AccoundDetailsInteractor.swift in Sources */,
+				0EA6D937250D9CDB0086DCB7 /* AccountDetailsDisplay.swift in Sources */,
 				0E5B1E2F250C6A9200A6A724 /* TransactionPresentationItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
