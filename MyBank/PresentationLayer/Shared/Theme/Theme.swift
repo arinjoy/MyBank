@@ -11,6 +11,7 @@ import UIKit
 struct Theme {
     
     // MARK: - Colors
+    
     struct Color {
           
         static let primaryText = UIColor(light: UIColor.colorFrom(red: 35, green: 31, blue: 32),
@@ -56,12 +57,10 @@ struct Theme {
 }
 
 private extension UIColor {
+    
     static func colorFrom(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
         return UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: 1.0)
     }
-}
-
-private extension UIColor {
 
     /// Creates a color object that generates its color data dynamically using the specified colors. For early SDKs creates light color.
     /// - Parameters:

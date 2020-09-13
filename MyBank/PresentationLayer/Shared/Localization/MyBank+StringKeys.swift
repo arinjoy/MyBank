@@ -20,6 +20,13 @@ extension StringKeys {
         case datesAgoSuffix = "dates.ago.suffix"
 
         case findATM = "find.atm.pin"
+        
+        // MARK: - Errors
+        
+        case genericErrorTitle = "error.generic.title"
+        case genericErrorMessage = "error.generic.message"
+        case errorDismissActionTitle = "error.dismiss.action.title"
+        case networkConnectionErrorMessage = "error.networkConnection.message"
 
         // MARK: - LocalizationKeys
         

@@ -12,3 +12,8 @@
 "pending.transaction.prefix" = "PENDING:";
 "dates.ago.suffix" = "ago";
 "find.atm.pin" = "Find ATM location";
+
+"error.generic.title" = "Oops! Something wrong.";
+"error.generic.message" = "There is a generic error. Please try again later.";
+"error.networkConnection.message" = "Please check your network connection and try again.";
+"error.dismiss.action.title" = "OK";

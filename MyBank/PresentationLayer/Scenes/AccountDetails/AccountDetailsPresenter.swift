@@ -87,10 +87,22 @@ final class AccountDetailsPresenter: AccountDetailsPresenting {
                     
                 case .failure(let error):
                     
-                    // TODO: handle custom error handling and read copies via StringKeys
-                    self?.display?.showError(title: "Oops",
-                                             message: "Something went wrong! Please try again.",
-                                             dismissTitle: "OK")
+                    let errorTitle: String = StringKeys.MyBank.genericErrorTitle.localized()
+                    let errorDismissTitle: String = StringKeys.MyBank.errorDismissActionTitle.localized()
+                    var errorMessage: String
+                    switch error {
+                        // Show network connectivity error
+                    case .networkFailure, .timeout:
+                        errorMessage = StringKeys.MyBank.networkConnectionErrorMessage.localized()
+                    default:
+                        // For all other errors, show this generic error
+                        // This can be elaborated case by case basis of custom error handling
+                        errorMessage = StringKeys.MyBank.genericErrorMessage.localized()
+                    }
+                    
+                    self?.display?.showError(title: errorTitle,
+                                            message: errorMessage,
+                                            dismissTitle: errorDismissTitle)
                 }
             })
             .store(in: &cancellables)
