@@ -15,7 +15,9 @@ extension StringKeys {
         case accountDetailsHeading = "account.details.heading"
         case availableFunds = "account.details.available.funds"
         case accountBalance = "account.details.balance"
-        case prendingTransactionPrefix = "prending.transaction.prefix"
+        
+        case prendingTransactionPrefix = "pending.transaction.prefix"
+        case datesAgoSuffix = "dates.ago.suffix"
 
         case findATM = "find.atm.pin"
 

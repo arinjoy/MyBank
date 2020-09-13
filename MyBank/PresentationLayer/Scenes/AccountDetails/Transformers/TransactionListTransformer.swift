@@ -18,10 +18,14 @@ struct TransactionListTransformer: DataTransforming {
             let items = group.transactions.map { tranformTransaction($0) }
 
             let formattedDateText = DateFormattingHelper.mediumDate.string(from: group.date)
-            let daysAgoText = (DateComponentsHelper.yearMonthDayCompact.string(from: group.date, to: Date()) ?? "") + " ago"
+            
+            var datesAgoText: String = ""
+            if let text = DateComponentsHelper.yearMonthDayCompact.string(from: group.date, to: Date()) {
+                datesAgoText = text + " " + StringKeys.MyBank.datesAgoSuffix.localized()
+            }
   
             let section = GroupedTransactionSection(
-                headerItem: TransctionSectionHeaderPresentationItem(title: formattedDateText, subtitle: daysAgoText),
+                headerItem: TransctionSectionHeaderPresentationItem(title: formattedDateText, subtitle: datesAgoText),
                 transactionItems: items)
             sections.append(section)
         }
@@ -39,12 +43,17 @@ struct TransactionListTransformer: DataTransforming {
             fatalError("Number fomatter could not format currency amount")
         }
         
-        // TODO: handle "PENDING" with bold attributed text
-        var narrative: String = transaction.isPending ? "PENDING " : ""
-        narrative += transaction.narrativeText
+        var attributedDescription = NSAttributedString(string: transaction.narrativeText)
+        if transaction.isPending {
+            let attributedText = NSMutableAttributedString(string: StringKeys.MyBank.prendingTransactionPrefix.localized(),
+                                                              attributes: [.font: Theme.Font.subheading])
+            attributedText.append(NSAttributedString(string: " "))
+            attributedText.append(attributedDescription)
+            attributedDescription = attributedText
+        }
         
         return TransactionPresentationItem(id: transaction.id,
-                                           description: narrative,
+                                           description: attributedDescription,
                                            amount: signedAmount,
                                            isAtmTransaction:transaction.atmLocation != nil)
     }

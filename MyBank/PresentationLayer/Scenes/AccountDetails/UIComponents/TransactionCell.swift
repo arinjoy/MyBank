@@ -41,7 +41,7 @@ final class TransactionCell: UITableViewCell, NibProvidable, ReusableView {
     
     func configure(withPresentationItem item: TransactionPresentationItem) {
         atmIconWidthConstraint.constant = item.isAtmTransaction ? 50 : 0
-        descriptionLabel.text = item.description
+        descriptionLabel.attributedText = item.description
         amountLabel.text = item.amount
         
         // TODO: configure accessibility

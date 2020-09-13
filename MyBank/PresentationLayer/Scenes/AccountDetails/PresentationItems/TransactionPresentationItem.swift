@@ -10,7 +10,7 @@ import Foundation
 
 struct TransactionPresentationItem {
     let id: String
-    let description: String
+    let description: NSAttributedString
     let amount: String
     let isAtmTransaction: Bool
 }
