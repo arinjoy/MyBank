@@ -14,15 +14,18 @@ struct Theme {
     struct Color {
           
         static let primaryText = UIColor(light: UIColor.colorFrom(red: 35, green: 31, blue: 32),
-                                         dark: UIColor.white.withAlphaComponent(0.85))
+                                         dark: UIColor.white.withAlphaComponent(0.9))
         static let secondaryText = UIColor(light: UIColor.colorFrom(red: 138, green: 138, blue: 138),
-                                           dark: UIColor.white.withAlphaComponent(0.70))
+                                           dark: UIColor.white.withAlphaComponent(0.6))
+        static let headerText = UIColor.colorFrom(red: 35, green: 31, blue: 32)
 
         static let sunflower = UIColor.colorFrom(red: 255, green: 204, blue: 0)
         static let tealBackground = UIColor.colorFrom(red: 146, green: 176, blue: 176)
-        static let greyBackground = UIColor.colorFrom(red: 246, green: 246, blue: 246)
+        static let greyBackground =  UIColor(light: UIColor.colorFrom(red: 246, green: 246, blue: 246),
+                                             dark: UIColor.systemGray4)
         
-        static let tint = UIColor(light: Theme.Color.sunflower, dark: Theme.Color.sunflower) // TODO: Change for dark mode maybe
+        // TODO: possibly tweak this for dark mode
+        static let tint = UIColor(light: Theme.Color.sunflower, dark: Theme.Color.sunflower)
         static let background =  UIColor(light: UIColor.white, dark: UIColor.black)
     }
 
@@ -31,7 +34,7 @@ struct Theme {
     struct Font {
         
         static let title: UIFont = {
-            let titleFont = UIFont(name: "HelveticaNeue-Light", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .light)
+            let titleFont = UIFont(name: "HelveticaNeue-Light", size: 22) ?? UIFont.systemFont(ofSize: 22, weight: .light)
             return UIFontMetrics(forTextStyle: .title1).scaledFont(for: titleFont)
         }()
         

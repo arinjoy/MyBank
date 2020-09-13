@@ -15,6 +15,8 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
     
     @IBOutlet weak var tableView: UITableView!
     
+    private let accountDetailsHeaderView = AccountDetailsHeaderView(frame: CGRect())
+    
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = Theme.Color.tint
@@ -26,13 +28,9 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
     typealias DataSource = UITableViewDiffableDataSource<GroupedTransactionSection, TransactionPresentationItem>
     typealias Snapshot = NSDiffableDataSourceSnapshot<GroupedTransactionSection, TransactionPresentationItem>
     
-//    private var dataSections: [GroupedTransactionSection] = []
-    
     private lazy var dataSource: UITableViewDiffableDataSource<GroupedTransactionSection, TransactionPresentationItem> = {
         return makeDataSource()
     }()
-    
-//    private var cancellables: [AnyCancellable] = []
     
     // MARK: - Presenter
     
@@ -75,18 +73,25 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
     // MARK: - AccountDetailsDisplay
     
     func setTitle(_ title: String) {
-        self.navigationItem.title = title
+        navigationItem.title = title
     }
     
     func updateAccountDetailsHeader() {
-        // TODO: Attach data to the table view top big header
+        // TODO: Handle self sizing correctly
+        guard let item = presenter.accountDetailsPresentationItem else { return }
+        
+        accountDetailsHeaderView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 180)
+        accountDetailsHeaderView.configure(withPresentationItem: item)
+        
+        tableView.tableHeaderView = accountDetailsHeaderView
+        tableView.tableHeaderView?.layoutSubviews()
     }
     
     func updateTransactionList() {
         var snapshot = Snapshot()
         snapshot.appendSections(presenter.transactionGroupsDataSource)
         presenter.transactionGroupsDataSource.forEach { section in
-          snapshot.appendItems(section.transactionItems, toSection: section)
+            snapshot.appendItems(section.transactionItems, toSection: section)
         }
         dataSource.apply(snapshot, animatingDifferences: false)
     }
@@ -120,7 +125,7 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
         tableView.estimatedRowHeight = TransactionCell.approximateRowHeight
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = TransctionSectionHeaderView.approximateRowHeight
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         
         tableView.registerNib(cellClass: TransactionCell.self)
         
@@ -128,10 +133,12 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
         tableView.register(nib, forHeaderFooterViewReuseIdentifier: TransctionSectionHeaderView.reuseIdentifer)
         tableView.dataSource = dataSource
         tableView.delegate = self
-        self.tableView.tableFooterView = UIView()
         
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshAccountDetails), for: .valueChanged)
+    
+        tableView.tableHeaderView = UIView()
+        tableView.tableFooterView = UIView()
     }
     
     @objc

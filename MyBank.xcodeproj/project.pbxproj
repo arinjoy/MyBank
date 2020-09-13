@@ -38,10 +38,6 @@
 		0E5B1E2C250C62D900A6A724 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B1E2A250C62D900A6A724 /* TransactionCell.xib */; };
 		0E5B1E2F250C6A9200A6A724 /* TransactionPresentationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E2E250C6A9200A6A724 /* TransactionPresentationItem.swift */; };
 		0E5B1E31250C6BF600A6A724 /* UITableView+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E30250C6BF600A6A724 /* UITableView+Common.swift */; };
-		0E5B1E3A250CA99700A6A724 /* AccountDetailsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E38250CA99700A6A724 /* AccountDetailsHeaderCell.swift */; };
-		0E5B1E3B250CA99700A6A724 /* AccountDetailsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B1E39250CA99700A6A724 /* AccountDetailsHeaderCell.xib */; };
-		0E5B1E3D250CB94500A6A724 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E3C250CB94500A6A724 /* DataSource.swift */; };
-		0E5B1E3F250CB96C00A6A724 /* DataSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E3E250CB96C00A6A724 /* DataSection.swift */; };
 		0E5B1E42250CBEEB00A6A724 /* AccountDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E41250CBEEB00A6A724 /* AccountDetailsPresenter.swift */; };
 		0E5B1E45250CBF8500A6A724 /* TransactionListTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E44250CBF8500A6A724 /* TransactionListTransformer.swift */; };
 		0E5B1E47250CC03100A6A724 /* DataTransforming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E46250CC03100A6A724 /* DataTransforming.swift */; };
@@ -52,6 +48,8 @@
 		0EA6D93E250DB3D80086DCB7 /* NumberFormatter+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D93D250DB3D80086DCB7 /* NumberFormatter+Helpers.swift */; };
 		0EA6D941250DCDF40086DCB7 /* LocalStubbedDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D940250DCDF40086DCB7 /* LocalStubbedDataService.swift */; };
 		0EA6D943250DDC470086DCB7 /* account_data_modified.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA6D942250DDC470086DCB7 /* account_data_modified.json */; };
+		0EA6D945250DE4F40086DCB7 /* AccountDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D944250DE4F40086DCB7 /* AccountDetailsHeaderView.swift */; };
+		0EA6D947250DE57D0086DCB7 /* AccountDetailsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EA6D946250DE57D0086DCB7 /* AccountDetailsHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,10 +98,6 @@
 		0E5B1E2A250C62D900A6A724 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		0E5B1E2E250C6A9200A6A724 /* TransactionPresentationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPresentationItem.swift; sourceTree = "<group>"; };
 		0E5B1E30250C6BF600A6A724 /* UITableView+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Common.swift"; sourceTree = "<group>"; };
-		0E5B1E38250CA99700A6A724 /* AccountDetailsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsHeaderCell.swift; sourceTree = "<group>"; };
-		0E5B1E39250CA99700A6A724 /* AccountDetailsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountDetailsHeaderCell.xib; sourceTree = "<group>"; };
-		0E5B1E3C250CB94500A6A724 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		0E5B1E3E250CB96C00A6A724 /* DataSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSection.swift; sourceTree = "<group>"; };
 		0E5B1E41250CBEEB00A6A724 /* AccountDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsPresenter.swift; sourceTree = "<group>"; };
 		0E5B1E44250CBF8500A6A724 /* TransactionListTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListTransformer.swift; sourceTree = "<group>"; };
 		0E5B1E46250CC03100A6A724 /* DataTransforming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransforming.swift; sourceTree = "<group>"; };
@@ -114,6 +108,8 @@
 		0EA6D93D250DB3D80086DCB7 /* NumberFormatter+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Helpers.swift"; sourceTree = "<group>"; };
 		0EA6D940250DCDF40086DCB7 /* LocalStubbedDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStubbedDataService.swift; sourceTree = "<group>"; };
 		0EA6D942250DDC470086DCB7 /* account_data_modified.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = account_data_modified.json; sourceTree = "<group>"; };
+		0EA6D944250DE4F40086DCB7 /* AccountDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsHeaderView.swift; sourceTree = "<group>"; };
+		0EA6D946250DE57D0086DCB7 /* AccountDetailsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountDetailsHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,7 +226,6 @@
 				0E5B1E04250C305E00A6A724 /* Localization */,
 				0E5B1E0F250C33E300A6A724 /* Accessibility */,
 				0E5B1E30250C6BF600A6A724 /* UITableView+Common.swift */,
-				0E5B1E40250CB9F300A6A724 /* ListDataSource */,
 				0E5B1E46250CC03100A6A724 /* DataTransforming.swift */,
 			);
 			path = Shared;
@@ -307,7 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				0E5B1E2D250C633800A6A724 /* UIComponents */,
-				0E5B1E4A250CC2C500A6A724 /* PresentationItems */,
 				0E5B1E43250CBF7200A6A724 /* Transformers */,
 				0E5B1DDC250C246500A6A724 /* AccountDetailsViewController.swift */,
 				0E5B1E41250CBEEB00A6A724 /* AccountDetailsPresenter.swift */,
@@ -319,42 +313,50 @@
 		0E5B1E2D250C633800A6A724 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				0E59B718250CF6D500DF7162 /* TransctionSectionHeaderView.swift */,
-				0E59B717250CF6D500DF7162 /* TransctionSectionHeaderView.xib */,
-				0E5B1E29250C62D900A6A724 /* TransactionCell.swift */,
-				0E5B1E2A250C62D900A6A724 /* TransactionCell.xib */,
-				0E5B1E38250CA99700A6A724 /* AccountDetailsHeaderCell.swift */,
-				0E5B1E39250CA99700A6A724 /* AccountDetailsHeaderCell.xib */,
+				0EA6D94A250DFF930086DCB7 /* AccountDetailsHeader */,
+				0EA6D948250DFF480086DCB7 /* TransactionSectionHeader */,
+				0EA6D949250DFF710086DCB7 /* TransactionCell */,
 			);
 			path = UIComponents;
-			sourceTree = "<group>";
-		};
-		0E5B1E40250CB9F300A6A724 /* ListDataSource */ = {
-			isa = PBXGroup;
-			children = (
-				0E5B1E3C250CB94500A6A724 /* DataSource.swift */,
-				0E5B1E3E250CB96C00A6A724 /* DataSection.swift */,
-			);
-			path = ListDataSource;
 			sourceTree = "<group>";
 		};
 		0E5B1E43250CBF7200A6A724 /* Transformers */ = {
 			isa = PBXGroup;
 			children = (
+				0EA6D93A250DA9CF0086DCB7 /* GroupedTransactionsSection.swift */,
 				0E5B1E44250CBF8500A6A724 /* TransactionListTransformer.swift */,
 			);
 			path = Transformers;
 			sourceTree = "<group>";
 		};
-		0E5B1E4A250CC2C500A6A724 /* PresentationItems */ = {
+		0EA6D948250DFF480086DCB7 /* TransactionSectionHeader */ = {
 			isa = PBXGroup;
 			children = (
-				0E5B1E48250CC2B000A6A724 /* AccountDetailsPresentationItem.swift */,
-				0E5B1E2E250C6A9200A6A724 /* TransactionPresentationItem.swift */,
+				0E59B718250CF6D500DF7162 /* TransctionSectionHeaderView.swift */,
+				0E59B717250CF6D500DF7162 /* TransctionSectionHeaderView.xib */,
 				0EA6D938250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift */,
-				0EA6D93A250DA9CF0086DCB7 /* GroupedTransactionsSection.swift */,
 			);
-			path = PresentationItems;
+			path = TransactionSectionHeader;
+			sourceTree = "<group>";
+		};
+		0EA6D949250DFF710086DCB7 /* TransactionCell */ = {
+			isa = PBXGroup;
+			children = (
+				0E5B1E29250C62D900A6A724 /* TransactionCell.swift */,
+				0E5B1E2A250C62D900A6A724 /* TransactionCell.xib */,
+				0E5B1E2E250C6A9200A6A724 /* TransactionPresentationItem.swift */,
+			);
+			path = TransactionCell;
+			sourceTree = "<group>";
+		};
+		0EA6D94A250DFF930086DCB7 /* AccountDetailsHeader */ = {
+			isa = PBXGroup;
+			children = (
+				0EA6D944250DE4F40086DCB7 /* AccountDetailsHeaderView.swift */,
+				0EA6D946250DE57D0086DCB7 /* AccountDetailsHeaderView.xib */,
+				0E5B1E48250CC2B000A6A724 /* AccountDetailsPresentationItem.swift */,
+			);
+			path = AccountDetailsHeader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,8 +446,8 @@
 				0E5B1E0A250C31D000A6A724 /* MyBank.strings in Resources */,
 				0E5B1E2C250C62D900A6A724 /* TransactionCell.xib in Resources */,
 				0E5B1DFF250C2AB100A6A724 /* account_data.json in Resources */,
+				0EA6D947250DE57D0086DCB7 /* AccountDetailsHeaderView.xib in Resources */,
 				0E5B1DE2250C246600A6A724 /* Assets.xcassets in Resources */,
-				0E5B1E3B250CA99700A6A724 /* AccountDetailsHeaderCell.xib in Resources */,
 				0E5B1DE0250C246500A6A724 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,9 +470,7 @@
 				0E5B1E17250C3A0700A6A724 /* ApiConstants.swift in Sources */,
 				0E5B1E1E250C3C1B00A6A724 /* Scheduler.swift in Sources */,
 				0E5B1E24250C416300A6A724 /* AccountDetailsResponse+Models.swift in Sources */,
-				0E5B1E3A250CA99700A6A724 /* AccountDetailsHeaderCell.swift in Sources */,
 				0E59B71A250CF6D500DF7162 /* TransctionSectionHeaderView.swift in Sources */,
-				0E5B1E3F250CB96C00A6A724 /* DataSection.swift in Sources */,
 				0E5B1E13250C392200A6A724 /* NetworkServiceType.swift in Sources */,
 				0E5B1E11250C38AF00A6A724 /* ServicesProvider.swift in Sources */,
 				0E5B1E03250C2B4B00A6A724 /* Theme.swift in Sources */,
@@ -489,13 +489,13 @@
 				0E5B1E0E250C330000A6A724 /* AccessibilityIdentifiers.swift in Sources */,
 				0EA6D941250DCDF40086DCB7 /* LocalStubbedDataService.swift in Sources */,
 				0E5B1E2B250C62D900A6A724 /* TransactionCell.swift in Sources */,
+				0EA6D945250DE4F40086DCB7 /* AccountDetailsHeaderView.swift in Sources */,
 				0EA6D93B250DA9CF0086DCB7 /* GroupedTransactionsSection.swift in Sources */,
 				0E5B1E0C250C32A900A6A724 /* UIAccessibility+Helpers.swift in Sources */,
 				0EA6D939250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift in Sources */,
 				0E5B1E45250CBF8500A6A724 /* TransactionListTransformer.swift in Sources */,
 				0E5B1E19250C3B2400A6A724 /* NetworkService.swift in Sources */,
 				0E5B1DD9250C246500A6A724 /* AppDelegate.swift in Sources */,
-				0E5B1E3D250CB94500A6A724 /* DataSource.swift in Sources */,
 				0E59B71D250CFF6300DF7162 /* AccoundDetailsInteractor.swift in Sources */,
 				0EA6D937250D9CDB0086DCB7 /* AccountDetailsDisplay.swift in Sources */,
 				0E5B1E2F250C6A9200A6A724 /* TransactionPresentationItem.swift in Sources */,

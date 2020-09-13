@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import Combine
 
 protocol AccountDetailsPresenting: class {
@@ -87,19 +88,23 @@ final class AccountDetailsPresenter: AccountDetailsPresenting {
                 case .failure(let error):
                     
                     // TODO: handle custom error handling and read copies via StringKeys
-                    self?.display?.showError(title: "Oops", message: "Something went wrong! Please try again.", dismissTitle: "OK")
+                    self?.display?.showError(title: "Oops",
+                                             message: "Something went wrong! Please try again.",
+                                             dismissTitle: "OK")
                 }
             })
             .store(in: &cancellables)
     }
     
     var accountDetailsPresentationItem: AccountDetailsPresentationItem? {
-        guard let data = accountDetailsWithTransactionData else { return nil }
+        guard let accountDetails = accountDetailsWithTransactionData?.accountDetails else { return nil }
         
         // TODO: Please do via a transformer
-        return AccountDetailsPresentationItem(nickname: data.accountDetails.name,
-                                              number: data.accountDetails.number,
-                                              amount: "\(data.accountDetails.availableBalance)")
+        return AccountDetailsPresentationItem(accountTypeIcon: UIImage(named: "accountsimagetransactional")!,
+                                              accountDisplayName: accountDetails.name,
+                                              accountNumber: accountDetails.number,
+                                              availableBalanceText: NumberFormatterHelper.signedCurrency.string(from: accountDetails.availableBalance as NSNumber)!,
+                                              currentBalanceText: NumberFormatterHelper.signedCurrency.string(from: accountDetails.currentBalance as NSNumber)!)
     }
     
     var transactionGroupsDataSource: [GroupedTransactionSection] {

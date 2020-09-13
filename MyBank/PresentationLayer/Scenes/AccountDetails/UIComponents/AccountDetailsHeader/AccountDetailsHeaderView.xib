@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountDetailsHeaderView" customModule="MyBank" customModuleProvider="target">
+            <connections>
+                <outlet property="accountNameLabel" destination="WSR-ah-DL3" id="DOh-gK-jWl"/>
+                <outlet property="accountNumberLabel" destination="YCt-U5-GSJ" id="vWr-Wm-Oid"/>
+                <outlet property="accountTypeIconView" destination="9Cr-7f-87G" id="8gm-Jn-pLS"/>
+                <outlet property="balanceAmountLabel" destination="fkK-8y-Bcb" id="Tla-BI-Mud"/>
+                <outlet property="balanceTitleLabel" destination="MK4-XD-vTK" id="Ew2-Px-yDx"/>
+                <outlet property="bottomContainerView" destination="qHc-59-xjy" id="qL3-xk-1Kz"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="Eci-aE-0ob"/>
+                <outlet property="fundAmountLabel" destination="o6t-fY-Pa6" id="hq2-AW-ID5"/>
+                <outlet property="fundTitleLabel" destination="nOX-eh-7Df" id="lvH-Nz-aGf"/>
+                <outlet property="separatorLineView" destination="PFO-ou-N9O" id="UGO-p6-eoi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="410" height="160"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLO-YE-U4z" userLabel="Inner View">
+                    <rect key="frame" x="10" y="10" width="390" height="140"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="LIY-SM-epd" userLabel="Top Stack View">
+                            <rect key="frame" x="16" y="5" width="374" height="60"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="accountsimagetransactional" translatesAutoresizingMaskIntoConstraints="NO" id="9Cr-7f-87G" userLabel="Account Icon">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="gG2-sh-sSd"/>
+                                        <constraint firstAttribute="width" constant="60" id="vOY-Bt-PuW"/>
+                                    </constraints>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YsV-9U-Xxb" userLabel="NameNumber Stack View">
+                                    <rect key="frame" x="76" y="6" width="298" height="48"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;Account Display Name&gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSR-ah-DL3" userLabel="Account Name">
+                                            <rect key="frame" x="0.0" y="0.0" width="227.5" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;Account Full Number&gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCt-U5-GSJ" userLabel="Account Number">
+                                            <rect key="frame" x="0.0" y="26.5" width="214.5" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFO-ou-N9O" userLabel="Separator Line">
+                            <rect key="frame" x="0.0" y="64" width="390" height="1"/>
+                            <color key="backgroundColor" red="0.92549019607843142" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="u51-kg-le1"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHc-59-xjy" userLabel="Bottom View">
+                            <rect key="frame" x="0.0" y="65" width="390" height="75"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9l-jn-CYd" userLabel="Padder">
+                                    <rect key="frame" x="0.0" y="7.5" width="60" height="60"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="36e-a5-sFZ"/>
+                                        <constraint firstAttribute="width" constant="60" id="ldi-vU-l5W"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="&lt;&lt;Available Funds&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOX-eh-7Df" userLabel="Available Funds">
+                                    <rect key="frame" x="92" y="16" width="159.5" height="11.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;@222.43&gt;&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6t-fY-Pa6" userLabel="Funds Amount">
+                                    <rect key="frame" x="255.5" y="11" width="118.5" height="21.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="&lt;&lt;Account Balance&gt;&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MK4-XD-vTK" userLabel="Account Balance">
+                                    <rect key="frame" x="92" y="37.5" width="181" height="21.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;$500.65&gt;&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkK-8y-Bcb" userLabel="Balance Amount">
+                                    <rect key="frame" x="260" y="37.5" width="114" height="21.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="MK4-XD-vTK" secondAttribute="bottom" constant="16" id="DS6-Z3-sYF"/>
+                                <constraint firstItem="T9l-jn-CYd" firstAttribute="leading" secondItem="qHc-59-xjy" secondAttribute="leading" id="Fbz-dt-cY7"/>
+                                <constraint firstItem="MK4-XD-vTK" firstAttribute="leading" secondItem="nOX-eh-7Df" secondAttribute="leading" id="HCL-BV-Lvt"/>
+                                <constraint firstItem="fkK-8y-Bcb" firstAttribute="centerY" secondItem="MK4-XD-vTK" secondAttribute="centerY" id="KUE-gj-pkz"/>
+                                <constraint firstItem="nOX-eh-7Df" firstAttribute="top" secondItem="qHc-59-xjy" secondAttribute="top" constant="16" id="PYd-Di-WjM"/>
+                                <constraint firstItem="T9l-jn-CYd" firstAttribute="centerY" secondItem="qHc-59-xjy" secondAttribute="centerY" id="Z0g-af-nJu"/>
+                                <constraint firstItem="o6t-fY-Pa6" firstAttribute="centerY" secondItem="nOX-eh-7Df" secondAttribute="centerY" id="aDW-fx-zKY"/>
+                                <constraint firstItem="nOX-eh-7Df" firstAttribute="leading" secondItem="T9l-jn-CYd" secondAttribute="trailing" constant="32" id="cZy-3p-SB5"/>
+                                <constraint firstItem="MK4-XD-vTK" firstAttribute="top" secondItem="nOX-eh-7Df" secondAttribute="bottom" constant="10" id="h3e-yn-wyi"/>
+                                <constraint firstItem="fkK-8y-Bcb" firstAttribute="trailing" secondItem="o6t-fY-Pa6" secondAttribute="trailing" id="vaw-1R-QM7"/>
+                                <constraint firstAttribute="trailing" secondItem="o6t-fY-Pa6" secondAttribute="trailing" constant="16" id="zfz-hm-4Ew"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="PFO-ou-N9O" secondAttribute="trailing" id="B4S-3O-8ly"/>
+                        <constraint firstItem="qHc-59-xjy" firstAttribute="top" secondItem="LIY-SM-epd" secondAttribute="bottom" id="Gje-Hd-Cji"/>
+                        <constraint firstAttribute="trailing" secondItem="LIY-SM-epd" secondAttribute="trailing" id="HTh-RL-iwZ"/>
+                        <constraint firstItem="qHc-59-xjy" firstAttribute="leading" secondItem="qLO-YE-U4z" secondAttribute="leading" id="Okj-xD-DFh"/>
+                        <constraint firstItem="LIY-SM-epd" firstAttribute="leading" secondItem="qLO-YE-U4z" secondAttribute="leading" constant="16" id="Rqo-Ha-MNi"/>
+                        <constraint firstItem="LIY-SM-epd" firstAttribute="top" secondItem="qLO-YE-U4z" secondAttribute="top" constant="5" id="TU9-g1-rTU"/>
+                        <constraint firstItem="PFO-ou-N9O" firstAttribute="top" secondItem="LIY-SM-epd" secondAttribute="bottom" constant="-1" id="W4E-Wf-BVP"/>
+                        <constraint firstAttribute="trailing" secondItem="qHc-59-xjy" secondAttribute="trailing" id="o7d-XX-cH9"/>
+                        <constraint firstItem="PFO-ou-N9O" firstAttribute="leading" secondItem="qLO-YE-U4z" secondAttribute="leading" id="oEc-bw-i1B"/>
+                        <constraint firstAttribute="bottom" secondItem="qHc-59-xjy" secondAttribute="bottom" id="tHC-U7-Sxh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="qLO-YE-U4z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Da5-b9-sgI"/>
+                <constraint firstItem="qLO-YE-U4z" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-10" id="YV3-tD-XJT"/>
+                <constraint firstItem="qLO-YE-U4z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="ezc-DJ-ZHq"/>
+                <constraint firstItem="qLO-YE-U4z" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="-10" id="oSN-ye-YXS"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-539" y="-600"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="accountsimagetransactional" width="37" height="37"/>
+    </resources>
+</document>
