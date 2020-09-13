@@ -15,15 +15,27 @@ final class TransctionSectionHeaderView: UITableViewHeaderFooterView {
 
     // MARK: - Outlets
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var subtitleLabel: UILabel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        applyStyles()
+    }
     
     // MARK: - Configuration
     
     func configure(withPresentationItem item: TransctionSectionHeaderPresentationItem) {
-        titleLabel.font = Theme.Font.subheading
-        subtitleLabel.font = Theme.Font.body
+        applyStyles()
         titleLabel.text = item.title
         subtitleLabel.text = item.subtitle
+    }
+    
+    // MARK: - Private Helpers
+    
+    private func applyStyles() {
+        titleLabel.font = Theme.Font.subheading
+        subtitleLabel.font = Theme.Font.body
+        contentView.backgroundColor = Theme.Color.sunflower
     }
 }

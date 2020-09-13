@@ -35,14 +35,14 @@ struct Theme {
             return UIFontMetrics(forTextStyle: .title1).scaledFont(for: titleFont)
         }()
         
+        static let subheading: UIFont = {
+            let titleFont = UIFont(name: "HelveticaNeue-Medium", size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .medium)
+            return UIFontMetrics(forTextStyle: .subheadline).scaledFont(for: titleFont)
+        }()
+        
         static let body: UIFont = {
             let titleFont = UIFont(name: "HelveticaNeue", size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .regular)
             return UIFontMetrics(forTextStyle: .body).scaledFont(for: titleFont)
-        }()
-        
-        static let subheading: UIFont = {
-            let titleFont = UIFont(name: "HelveticaNeue-Bold", size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .bold)
-            return UIFontMetrics(forTextStyle: .subheadline).scaledFont(for: titleFont)
         }()
         
         static let footnote: UIFont = {

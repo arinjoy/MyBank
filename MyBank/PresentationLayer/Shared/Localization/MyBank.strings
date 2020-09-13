@@ -9,6 +9,6 @@
 "account.details.heading" = "Account Details";
 "account.details.available.funds" = "Available funds";
 "account.details.balance" = "Account balance";
-"pending.transaction.prefix" = "PENDING";
+"pending.transaction.prefix" = "PENDING:";
 "dates.ago.suffix" = "ago";
 "find.atm.pin" = "Find ATM location";
