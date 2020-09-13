@@ -27,8 +27,11 @@ final class TransctionSectionHeaderView: UITableViewHeaderFooterView {
     
     func configure(withPresentationItem item: TransctionSectionHeaderPresentationItem) {
         applyStyles()
+        
         titleLabel.text = item.title
         subtitleLabel.text = item.subtitle
+        
+        item.accessibility?.apply(to: self)
     }
     
     // MARK: - Private Helpers
@@ -39,5 +42,7 @@ final class TransctionSectionHeaderView: UITableViewHeaderFooterView {
         subtitleLabel.font = Theme.Font.body
         subtitleLabel.textColor = Theme.Color.headerText
         contentView.backgroundColor = Theme.Color.sunflower
+        
+        isAccessibilityElement = true
     }
 }

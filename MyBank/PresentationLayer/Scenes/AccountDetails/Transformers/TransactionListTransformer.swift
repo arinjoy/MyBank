@@ -23,9 +23,16 @@ struct TransactionListTransformer: DataTransforming {
             if let text = DateComponentsHelper.yearMonthDayCompact.string(from: group.date, to: Date()) {
                 datesAgoText = text + " " + StringKeys.MyBank.datesAgoSuffix.localized()
             }
+            
+            let headerAccessibility = AccessibilityConfiguration(
+                identifier: "accessibilityId.account.details.transaction.section.header",
+                label: UIAccessibility.createCombinedAccessibilityLabel(from: [formattedDateText, datesAgoText]),
+                traits: .header)
   
             let section = GroupedTransactionSection(
-                headerItem: TransctionSectionHeaderPresentationItem(title: formattedDateText, subtitle: datesAgoText),
+                headerItem: TransctionSectionHeaderPresentationItem(title: formattedDateText,
+                                                                    subtitle: datesAgoText,
+                                                                    accessibility: headerAccessibility),
                 transactionItems: items)
             sections.append(section)
         }

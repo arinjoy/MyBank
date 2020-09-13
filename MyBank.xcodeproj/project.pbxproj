@@ -50,6 +50,7 @@
 		0EA6D943250DDC470086DCB7 /* account_data_modified.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA6D942250DDC470086DCB7 /* account_data_modified.json */; };
 		0EA6D945250DE4F40086DCB7 /* AccountDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D944250DE4F40086DCB7 /* AccountDetailsHeaderView.swift */; };
 		0EA6D947250DE57D0086DCB7 /* AccountDetailsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EA6D946250DE57D0086DCB7 /* AccountDetailsHeaderView.xib */; };
+		0EA6D94C250E3C610086DCB7 /* AccountDetailsTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D94B250E3C610086DCB7 /* AccountDetailsTransformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		0EA6D942250DDC470086DCB7 /* account_data_modified.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = account_data_modified.json; sourceTree = "<group>"; };
 		0EA6D944250DE4F40086DCB7 /* AccountDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsHeaderView.swift; sourceTree = "<group>"; };
 		0EA6D946250DE57D0086DCB7 /* AccountDetailsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountDetailsHeaderView.xib; sourceTree = "<group>"; };
+		0EA6D94B250E3C610086DCB7 /* AccountDetailsTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,8 +325,9 @@
 		0E5B1E43250CBF7200A6A724 /* Transformers */ = {
 			isa = PBXGroup;
 			children = (
-				0EA6D93A250DA9CF0086DCB7 /* GroupedTransactionsSection.swift */,
+				0EA6D94B250E3C610086DCB7 /* AccountDetailsTransformer.swift */,
 				0E5B1E44250CBF8500A6A724 /* TransactionListTransformer.swift */,
+				0EA6D93A250DA9CF0086DCB7 /* GroupedTransactionsSection.swift */,
 			);
 			path = Transformers;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				0E5B1DDD250C246500A6A724 /* AccountDetailsViewController.swift in Sources */,
 				0E5B1E22250C3FBE00A6A724 /* Resource+AccountDetailsResponse.swift in Sources */,
 				0EA6D93E250DB3D80086DCB7 /* NumberFormatter+Helpers.swift in Sources */,
+				0EA6D94C250E3C610086DCB7 /* AccountDetailsTransformer.swift in Sources */,
 				0E5B1E06250C307600A6A724 /* LocalizationKeys.swift in Sources */,
 				0E5B1E47250CC03100A6A724 /* DataTransforming.swift in Sources */,
 				0E5B1E0E250C330000A6A724 /* AccessibilityIdentifiers.swift in Sources */,

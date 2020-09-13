@@ -15,15 +15,15 @@ class AccountDetailsHeaderView: UIView {
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var accountTypeIconView: UIImageView!
     @IBOutlet private weak var accountNameLabel: UILabel!
-    @IBOutlet weak var accountNumberLabel: UILabel!
+    @IBOutlet private weak var accountNumberLabel: UILabel!
     @IBOutlet private weak var separatorLineView: UIView!
     
     @IBOutlet private weak var bottomContainerView: UIView!
-    @IBOutlet weak var fundTitleLabel: UILabel!
-    @IBOutlet weak var fundAmountLabel: UILabel!
+    @IBOutlet private weak var fundTitleLabel: UILabel!
+    @IBOutlet private weak var fundAmountLabel: UILabel!
 
-    @IBOutlet weak var balanceTitleLabel: UILabel!
-    @IBOutlet weak var balanceAmountLabel: UILabel!
+    @IBOutlet private weak var balanceTitleLabel: UILabel!
+    @IBOutlet private weak var balanceAmountLabel: UILabel!
 
     
     // MARK: - Lifecycle
@@ -52,17 +52,17 @@ class AccountDetailsHeaderView: UIView {
         accountTypeIconView.image = item.accountTypeIcon
         accountNameLabel.text = item.accountDisplayName
         accountNumberLabel.text = item.accountNumber
-        fundTitleLabel.text = "Available funds"
+        fundTitleLabel.text = item.availableBalanceLabel
         fundAmountLabel.text = item.availableBalanceText
-        balanceTitleLabel.text = "Available balance"
+        balanceTitleLabel.text = item.currentBalanceLabel
         balanceAmountLabel.text = item.currentBalanceText
         
+        item.accessibility?.apply(to: self)
     }
     
     // MARK: - Private Helpers
     
     private func applyStyles() {
-        
         contentView.backgroundColor = Theme.Color.tealBackground
         bottomContainerView.backgroundColor = Theme.Color.greyBackground
         separatorLineView.backgroundColor = Theme.Color.tealBackground.withAlphaComponent(0.3)
@@ -80,5 +80,7 @@ class AccountDetailsHeaderView: UIView {
         
         balanceAmountLabel.font = Theme.Font.subheading
         balanceAmountLabel.textColor = Theme.Color.secondaryText
+        
+        isAccessibilityElement = true
     }
 }

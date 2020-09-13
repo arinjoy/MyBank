@@ -40,10 +40,14 @@ final class AccountDetailsPresenter: AccountDetailsPresenting {
 
     /// The interactor for finding all the details about the account and its transaction history
     private let interactor: AccountDetailsInteracting!
+    
+    /// The data tranforming helper from domain level  raw account details model into their presentation item to show on the UI
+    private let accountDetailsTransformer = AccountDetailsTransformer()
 
-    /// The data tranforming helper from domain lavel transaction models into their presentation items to show on the UI
+    /// The data tranforming helper from domain level transaction models into their presentation items to show on the UI
     private let transactionListTransformer = TransactionListTransformer()
     
+    /// Combine style desiposeBag
     private var cancellables: [AnyCancellable] = []
     
     
@@ -110,19 +114,11 @@ final class AccountDetailsPresenter: AccountDetailsPresenting {
     
     var accountDetailsPresentationItem: AccountDetailsPresentationItem? {
         guard let accountDetails = accountDetailsWithTransactionData?.accountDetails else { return nil }
-        
-        // TODO: Please do via a transformer
-        return AccountDetailsPresentationItem(accountTypeIcon: UIImage(named: "accountsimagetransactional")!,
-                                              accountDisplayName: accountDetails.name,
-                                              accountNumber: accountDetails.number,
-                                              availableBalanceText: NumberFormatterHelper.signedCurrency.string(from: accountDetails.availableBalance as NSNumber)!,
-                                              currentBalanceText: NumberFormatterHelper.signedCurrency.string(from: accountDetails.currentBalance as NSNumber)!)
+        return accountDetailsTransformer.transform(input: accountDetails)
     }
     
     var transactionGroupsDataSource: [GroupedTransactionSection] {
         guard let data = accountDetailsWithTransactionData, !data.transactionsGroups.isEmpty else { return [] }
         return transactionListTransformer.transform(input: data.transactionsGroups)
     }
-    
-    // MARK: - Private Helpers
 }

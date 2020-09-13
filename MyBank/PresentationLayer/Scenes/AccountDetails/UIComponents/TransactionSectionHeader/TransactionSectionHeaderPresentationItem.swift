@@ -11,6 +11,7 @@ import Foundation
 struct TransctionSectionHeaderPresentationItem {
     let title: String
     let subtitle: String
+    let accessibility: AccessibilityConfiguration?
 }
 
 extension TransctionSectionHeaderPresentationItem: Hashable {
