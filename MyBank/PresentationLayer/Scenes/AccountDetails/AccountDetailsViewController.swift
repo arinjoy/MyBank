@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Combine
+import SwiftUI
 
 final class AccountDetailsViewController: UIViewController, AccountDetailsDisplay {
 
@@ -107,7 +107,6 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
     }
     
     func hideLoadingIndicator() {
-        // TODO:
         refreshControl.endRefreshing()
         refreshControl.isHidden = true
     }
@@ -177,5 +176,19 @@ extension AccountDetailsViewController: UITableViewDelegate {
         }
         headerView.configure(withPresentationItem: presenter.transactionGroupsDataSource[section].headerItem)
         return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // TODO: Pass in real data based on which transaction is tapped
+        
+        let atmMapView = ATMMapContentView(
+            withaAtmLocation: ATMLocation(identifier: "111111",
+                                          name: "CBA Circular Quay Station",
+                                          address: "8 Alfred St, Sydney, NSW 2000",
+                                          coordinate: Coordinate(latitude: -33.861382,
+                                                                 longitude: 151.210316)))
+        let hostingVC = UIHostingController(rootView: atmMapView)
+        navigationController?.pushViewController(hostingVC, animated: true)
     }
 }

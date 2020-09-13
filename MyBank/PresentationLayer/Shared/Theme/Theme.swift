@@ -34,6 +34,7 @@ struct Theme {
     
     struct Font {
         
+        /// Making it 22pt to make it look bigger. 18pt might be a bit small, compared to rest below which are 16pt
         static let title: UIFont = {
             let titleFont = UIFont(name: "HelveticaNeue-Light", size: 22) ?? UIFont.systemFont(ofSize: 22, weight: .light)
             return UIFontMetrics(forTextStyle: .title1).scaledFont(for: titleFont)

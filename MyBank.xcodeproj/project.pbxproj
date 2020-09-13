@@ -51,6 +51,8 @@
 		0EA6D945250DE4F40086DCB7 /* AccountDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D944250DE4F40086DCB7 /* AccountDetailsHeaderView.swift */; };
 		0EA6D947250DE57D0086DCB7 /* AccountDetailsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EA6D946250DE57D0086DCB7 /* AccountDetailsHeaderView.xib */; };
 		0EA6D94C250E3C610086DCB7 /* AccountDetailsTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D94B250E3C610086DCB7 /* AccountDetailsTransformer.swift */; };
+		0EA6D94F250E53DF0086DCB7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D94E250E53DF0086DCB7 /* MapView.swift */; };
+		0EA6D995250EDD1E0086DCB7 /* ATMMapContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D994250EDD1E0086DCB7 /* ATMMapContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,8 @@
 		0EA6D944250DE4F40086DCB7 /* AccountDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsHeaderView.swift; sourceTree = "<group>"; };
 		0EA6D946250DE57D0086DCB7 /* AccountDetailsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountDetailsHeaderView.xib; sourceTree = "<group>"; };
 		0EA6D94B250E3C610086DCB7 /* AccountDetailsTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsTransformer.swift; sourceTree = "<group>"; };
+		0EA6D94E250E53DF0086DCB7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		0EA6D994250EDD1E0086DCB7 /* ATMMapContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATMMapContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				0E5B1E28250C611000A6A724 /* AccountDetails */,
+				0EA6D94D250E539D0086DCB7 /* TransactionATMLocation */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -360,6 +365,15 @@
 				0E5B1E48250CC2B000A6A724 /* AccountDetailsPresentationItem.swift */,
 			);
 			path = AccountDetailsHeader;
+			sourceTree = "<group>";
+		};
+		0EA6D94D250E539D0086DCB7 /* TransactionATMLocation */ = {
+			isa = PBXGroup;
+			children = (
+				0EA6D94E250E53DF0086DCB7 /* MapView.swift */,
+				0EA6D994250EDD1E0086DCB7 /* ATMMapContentView.swift */,
+			);
+			path = TransactionATMLocation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EA6D995250EDD1E0086DCB7 /* ATMMapContentView.swift in Sources */,
 				0E5B1E26250C55DB00A6A724 /* DateFormatter+Helpers.swift in Sources */,
 				0E5B1E17250C3A0700A6A724 /* ApiConstants.swift in Sources */,
 				0E5B1E1E250C3C1B00A6A724 /* Scheduler.swift in Sources */,
@@ -477,6 +492,7 @@
 				0E5B1E13250C392200A6A724 /* NetworkServiceType.swift in Sources */,
 				0E5B1E11250C38AF00A6A724 /* ServicesProvider.swift in Sources */,
 				0E5B1E03250C2B4B00A6A724 /* Theme.swift in Sources */,
+				0EA6D94F250E53DF0086DCB7 /* MapView.swift in Sources */,
 				0E5B1E49250CC2B000A6A724 /* AccountDetailsPresentationItem.swift in Sources */,
 				0E5B1E15250C39A200A6A724 /* Resource.swift in Sources */,
 				0E5B1E31250C6BF600A6A724 /* UITableView+Common.swift in Sources */,
