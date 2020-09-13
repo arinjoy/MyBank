@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-protocol AccoundDetailsInteracting: class {
+protocol AccountDetailsInteracting: class {
     
     /// Get everything at once - account details + transaction history
     /// Not ideal. As they are fetched separately from different APIs in relaity. But for simplicity they are fetched teogther within one network call
@@ -17,7 +17,7 @@ protocol AccoundDetailsInteracting: class {
 }
 
 
-final class AccoundDetailsInteractor: AccoundDetailsInteracting {
+final class AccoundDetailsInteractor: AccountDetailsInteracting {
 
     // MARK: - Depdendency
     

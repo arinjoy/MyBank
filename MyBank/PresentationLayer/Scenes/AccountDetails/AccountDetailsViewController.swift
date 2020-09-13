@@ -64,8 +64,6 @@ final class AccountDetailsViewController: UIViewController {
                 print(result)
                 switch result {
                 case .success(let response):
-                    let transformer = TransactionListTransformer()
-                    self?.dataSections = transformer.transform(input: response.clearedTransactions)
                     self?.updateTransactionList()
                 default: break
                 }

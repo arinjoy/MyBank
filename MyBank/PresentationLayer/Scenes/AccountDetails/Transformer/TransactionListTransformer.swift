@@ -34,13 +34,19 @@ struct GroupedTransactionSection: Hashable {
 
 struct TransactionListTransformer: DataTransforming {
     
-    func transform(input: [Transaction]) -> [GroupedTransactionSection] {
+    func transform(input: [TransactionGroup]) -> [GroupedTransactionSection] {
         
-        let items = input.map {  return TransactionPresentationItem($0) }
+        // TODO: improve here and do the real date header string calculation and "PENDING" injection
         
-        return [GroupedTransactionSection(
-            headerItem: TransctionSectionHeaderPresentationItem(title: "12 Aug 2020", subtitle: "12 days ago"),
-            transactionItems: items)]
+        var sections: [GroupedTransactionSection] = []
+        for group in input {
+            let items = group.transactions.map { return TransactionPresentationItem($0) }
+            let section = GroupedTransactionSection(
+                headerItem: TransctionSectionHeaderPresentationItem(title: "\(group.date)", subtitle: "12 days ago"),
+                transactionItems: items)
+            sections.append(section)
+        }
+        return sections
     }
 }
 

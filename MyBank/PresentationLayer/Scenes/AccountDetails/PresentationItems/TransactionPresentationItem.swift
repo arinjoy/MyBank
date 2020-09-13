@@ -14,11 +14,11 @@ struct TransactionPresentationItem {
     let amount: String
     let isAtmTransaction: Bool
 
-    init(_ transaction: Transaction) {
-        self.id = transaction.identifier
-        self.description = transaction.narrative
+    init(_ transaction: TransactionModel) {
+        self.id = transaction.id
+        self.description = transaction.narrativeText
         self.amount = "$ \(transaction.amount)" // TODO: properly via number formatter
-        self.isAtmTransaction = transaction.atmId != nil
+        self.isAtmTransaction = transaction.atmLocation != nil
     }
 }
 
