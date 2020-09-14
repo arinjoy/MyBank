@@ -23,13 +23,13 @@
                             <constraint firstAttribute="width" constant="55" id="d2T-Gc-D6h"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="&lt;&lt;Narrative long Description&gt;&gt;" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEM-6W-mrB" userLabel="DescriptionLabel">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="&lt;&lt;Narrative long Description&gt;&gt;" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEM-6W-mrB" userLabel="DescriptionLabel">
                         <rect key="frame" x="79" y="10" width="242" height="89"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" text="&lt;&lt;Amount value&gt;&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gft-Ql-iIF" userLabel="AmountLabel">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" text="&lt;&lt;Amount value&gt;&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gft-Ql-iIF" userLabel="AmountLabel">
                         <rect key="frame" x="368.66666666666669" y="44.666666666666664" width="147.33333333333331" height="19.999999999999993"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>

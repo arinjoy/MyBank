@@ -226,7 +226,7 @@
 		0E5B1DEE250C246700A6A724 /* MyBankTests */ = {
 			isa = PBXGroup;
 			children = (
-				0E998D51250F4B1600E20395 /* PresentationTests */,
+				0E998D51250F4B1600E20395 /* PresentationLayerTests */,
 				0EA6D9B1250F35470086DCB7 /* DomainLayerTests */,
 				0EA6D99E250EF4350086DCB7 /* DataLayerTests */,
 				0EA6D9A2250EFC080086DCB7 /* Bundle+JSONForResource.swift */,
@@ -392,7 +392,7 @@
 			path = Transformers;
 			sourceTree = "<group>";
 		};
-		0E998D51250F4B1600E20395 /* PresentationTests */ = {
+		0E998D51250F4B1600E20395 /* PresentationLayerTests */ = {
 			isa = PBXGroup;
 			children = (
 				0E998D54250F55A500E20395 /* AccountDetailsTransformerSpec.swift */,
@@ -400,7 +400,7 @@
 				0E998D58250F5B5A00E20395 /* AccountDetailsPresenterSpec.swift */,
 				0E998D56250F5B4500E20395 /* AccountDetailsPresenter+TestDoubles.swift */,
 			);
-			path = PresentationTests;
+			path = PresentationLayerTests;
 			sourceTree = "<group>";
 		};
 		0E998D60250F72E800E20395 /* MyBankUITests */ = {
