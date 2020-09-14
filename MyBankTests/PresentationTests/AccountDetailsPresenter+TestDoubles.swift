@@ -102,10 +102,25 @@ final class AccountDetailsPresenterSpy: AccountDetailsPresenting {
     }
 }
 
+// MARK: - Router Spy
+
+final class AccountDetailsRouterSpy: AccountDetailsRouting {
+    
+    // Spied call
+    var routeToAtmLocationMapCalled: Bool = false
+    // Spied value
+    var atmLocation: ATMLocation?
+    
+    func routeToAtmLocationMap(withWithAtmLocation atmLocation: ATMLocation) {
+        routeToAtmLocationMapCalled = true
+        self.atmLocation = atmLocation
+    }
+}
+
+
 // MARK: - Interactor Dummy
 
 final class AccountDetailsInteractorDummy: AccountDetailsInteracting {
-    
     func getAccountDetailsWithTransactionHistory() -> AnyPublisher<Result<AccountDetailsWithTransactionHistory, NetworkError>, Never> {
         return Empty().eraseToAnyPublisher()
     }

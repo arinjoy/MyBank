@@ -8,6 +8,7 @@
 
 import Quick
 import Nimble
+import Foundation
 @testable import MyBank
 
 final class AccountDetailsPresenterSpec: QuickSpec {
@@ -175,6 +176,41 @@ final class AccountDetailsPresenterSpec: QuickSpec {
                         expect(displaySpy.errorMessage).toEventually(equal("Please check your network connection and try again."))
                         expect(displaySpy.errorDismissTitle).toEventually(equal("OK"))
                     }
+                }
+            }
+            
+            context("user interaction behaviour and routing navigation logic") {
+                
+                var interactorMock: AccountDetailsInteractorMock!
+                var displayDummy: AccountDetailsDisplayDummy!
+                var routerSpy: AccountDetailsRouterSpy!
+                
+                beforeEach {
+                    interactorMock = AccountDetailsInteractorMock(returningError: false)
+                    presenter = AccountDetailsPresenter(interactor: interactorMock)
+                    displayDummy = AccountDetailsDisplayDummy()
+                    routerSpy = AccountDetailsRouterSpy()
+                    presenter.display = displayDummy
+                    presenter.router = routerSpy
+                }
+                
+                it("should not navigate to ATM map view unless the cell is tappable with atm location in it") {
+                    // when
+                    presenter.loadAccountDetailsAndTransactions(isRereshingNeeded: true)
+                    presenter.didTapTransaction(at: IndexPath(row: 0, section: 0)) // non-atm transaction at this cell
+                    
+                    // then
+                    expect(routerSpy.routeToAtmLocationMapCalled).toEventually(beFalse())
+                }
+                
+                fit("should navigate to ATM map view when an ATM transaction has been mapped") {
+
+                    // when
+                    presenter.loadAccountDetailsAndTransactions(isRereshingNeeded: true)
+                    presenter.didTapTransaction(at: IndexPath(row: 1, section: 0)) // atm transaction at this cell
+                    
+                    // then
+                    expect(routerSpy.routeToAtmLocationMapCalled).toEventually(beTrue())
                 }
             }
         }
