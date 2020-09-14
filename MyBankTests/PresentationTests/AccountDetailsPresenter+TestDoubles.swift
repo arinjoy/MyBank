@@ -108,12 +108,13 @@ final class AccountDetailsRouterSpy: AccountDetailsRouting {
     
     // Spied call
     var routeToAtmLocationMapCalled: Bool = false
-    // Spied value
-    var atmLocation: ATMLocation?
     
-    func routeToAtmLocationMap(withWithAtmLocation atmLocation: ATMLocation) {
+    // Spied value
+    var atmMapViewModel: ATMMapViewModel?
+    
+    func routeToAtmLocationMap(withAtmMapViewModel viewModel: ATMMapViewModel) {
         routeToAtmLocationMapCalled = true
-        self.atmLocation = atmLocation
+        self.atmMapViewModel = viewModel
     }
 }
 

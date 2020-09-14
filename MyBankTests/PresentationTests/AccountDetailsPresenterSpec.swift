@@ -6,9 +6,10 @@
 //  Copyright © 2020 Arinjoy Biswas. All rights reserved.
 //
 
+import Foundation
+import UIKit.UIImage
 import Quick
 import Nimble
-import Foundation
 @testable import MyBank
 
 final class AccountDetailsPresenterSpec: QuickSpec {
@@ -211,6 +212,20 @@ final class AccountDetailsPresenterSpec: QuickSpec {
                     
                     // then
                     expect(routerSpy.routeToAtmLocationMapCalled).toEventually(beTrue())
+                    
+                    // make sure correct atm information was passed in as view model
+                    expect(routerSpy.atmMapViewModel).toEventuallyNot(beNil())
+                    expect(routerSpy.atmMapViewModel?.viewTitle).toEventually(equal("ATM Location"))
+                    expect(routerSpy.atmMapViewModel?.atmLocation.name)
+                        .toEventually(equal("Circular Quay Station"))
+                    expect(routerSpy.atmMapViewModel?.atmLocation.address)
+                        .toEventually(equal("8 Alfred St, Sydney, NSW 2000"))
+                    expect(routerSpy.atmMapViewModel?.atmLocation.coordinate.latitude)
+                        .toEventually(equal(-33.8613819999999948))
+                    expect(routerSpy.atmMapViewModel?.atmLocation.coordinate.longitude)
+                        .toEventually(equal(151.21031600000002048))
+                    expect(routerSpy.atmMapViewModel?.customPinImage)
+                        .toEventually(equal(UIImage(named: "CBAFindUsAnnotationIconATM")!))
                 }
             }
         }
