@@ -12,14 +12,14 @@ extension StringKeys {
     
     enum MyBank: String, LocalizationKeys {
         
-        case accountDetailsHeading = "account.details.heading"
+        case accountDetailsViewTitle = "account.details.view.title"
         case availableFunds = "account.details.available.funds"
         case accountBalance = "account.details.balance"
         
         case prendingTransactionPrefix = "pending.transaction.prefix"
         case datesAgoSuffix = "dates.ago.suffix"
 
-        case findATM = "find.atm.pin"
+        case atmMapViewTitle = "atm.map.view.title"
         
         // MARK: - Errors
         

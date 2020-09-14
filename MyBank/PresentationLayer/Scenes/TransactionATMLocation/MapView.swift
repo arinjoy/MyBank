@@ -11,16 +11,17 @@ import MapKit
 
 struct MapView: UIViewRepresentable {
     
-    @Binding var annoation: MKPointAnnotation
-    
+    @Binding var pointAnnotaion: MKPointAnnotation
+    @Binding var customPinImage: UIImage?
+        
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
-        mapView.delegate = context.coordinator
-        mapView.addAnnotation(annoation)
-        let region = mapView.regionThatFits(MKCoordinateRegion(center: annoation.coordinate,
+        mapView.addAnnotation(pointAnnotaion)
+        let region = mapView.regionThatFits(MKCoordinateRegion(center: pointAnnotaion.coordinate,
                                                                latitudinalMeters: 200,
                                                                longitudinalMeters: 200))
         mapView.setRegion(region, animated: true)
+        mapView.delegate = context.coordinator
         return mapView
     }
 
@@ -33,27 +34,21 @@ struct MapView: UIViewRepresentable {
     }
 
     class Coordinator: NSObject, MKMapViewDelegate {
+        
         var parent: MapView
 
         init(_ parent: MapView) {
             self.parent = parent
         }
-    }
-}
-
-extension MKPointAnnotation {
-    static var example: MKPointAnnotation {
-        let annotation = MKPointAnnotation()
-        annotation.title = "Circular Quay Station"
-        annotation.subtitle = "8 Alfred St, Sydney, NSW 2000"
-        annotation.coordinate = CLLocationCoordinate2D(latitude: -33.861382, longitude: 151.210316)
-        return annotation
-    }
-}
-
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapView(annoation: .constant(MKPointAnnotation.example))
-            .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+        
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
+            view.canShowCallout = true
+            view.animatesDrop = false
+            if let pinImage = parent.customPinImage {
+                view.image = pinImage
+            }
+            return view
+        }
     }
 }

@@ -66,7 +66,7 @@ final class AccountDetailsPresenter: AccountDetailsPresenting {
     // MARK: - AccountDetailsPresenting
     
     func viewDidBecomeReady() {
-        display?.setTitle(StringKeys.MyBank.accountDetailsHeading.localized())
+        display?.setTitle(StringKeys.MyBank.accountDetailsViewTitle.localized())
     }
     
     func loadAccountDetailsAndTransactions(isRereshingNeeded: Bool) {
@@ -138,9 +138,14 @@ final class AccountDetailsPresenter: AccountDetailsPresenting {
             indexPath.row < data.transactionsGroups[indexPath.section].transactions.count,
             let atmLocation = data.transactionsGroups[indexPath.section].transactions[indexPath.row].atmLocation
         else {
-            // Either the item could not be found or that particular transaction might not have an atm location
+            // Either the item could not be found or that particular transaction might not have an atm location,
+            // so not actionable
             return
         }
-        router?.routeToAtmLocationMap(withWithAtmLocation: atmLocation)
+        let atmMapViewModel = ATMMapViewModel(viewTitle: StringKeys.MyBank.atmMapViewTitle.localized(),
+                                              atmLocation: atmLocation,
+                                              customPinImage: UIImage(named: "CBAFindUsAnnotationIconATM")!)
+        
+        router?.routeToAtmLocationMap(withAtmMapViewModel: atmMapViewModel)
     }
 }
