@@ -44,14 +44,14 @@ final class AccountDetailsDataMapingSpec: QuickSpec {
                     expect(mappedItem?.clearedTransactions.first?.identifier).to(equal("44e5b2bc484331ea24afd85ecfb212c8"))
                     expect(mappedItem?.clearedTransactions.first?.amount).to(equal(12))
                     expect(mappedItem?.clearedTransactions.first?.narrative).to(equal("Kaching TFR from JOHN CITIZEN<br/>xmas donation"))
-                    expect(mappedItem?.clearedTransactions.first?.timestamp).to(equal(self.dateFromString("20/12/2019")))
+                    expect(mappedItem?.clearedTransactions.first?.timestamp).to(equal(TestHelper.dateFromString("20/12/2019")))
                     expect(mappedItem?.clearedTransactions.first?.atmId).to(equal("129382"))
                     
                     expect(mappedItem?.pendingTransactions.count).to(equal(2))
                     expect(mappedItem?.pendingTransactions.first?.identifier).to(equal("e2eff6c2dafd909df8508f891b385d88"))
                     expect(mappedItem?.pendingTransactions.first?.amount).to(equal(-12.55))
                     expect(mappedItem?.pendingTransactions.first?.narrative).to(equal("WILSON PARKING SYDOBS SYDNEY NS AUS<br/>LAST 4 CARD DIGITS: 6901"))
-                    expect(mappedItem?.pendingTransactions.first?.timestamp).to(equal(self.dateFromString("22/08/2020")))
+                    expect(mappedItem?.pendingTransactions.first?.timestamp).to(equal(TestHelper.dateFromString("22/08/2020")))
                     expect(mappedItem?.pendingTransactions.first?.atmId).to(equal("137483"))
                     
                     expect(mappedItem?.atmLocations.count).to(equal(2))
@@ -80,12 +80,6 @@ final class AccountDetailsDataMapingSpec: QuickSpec {
                 }
             }
         }
-    }
-    
-    // MARK: - Private Helpers
-    
-    private func dateFromString(_ string: String) -> Date? {
-        return DateFormattingHelper.shortDate.date(from: string)
     }
 }
 

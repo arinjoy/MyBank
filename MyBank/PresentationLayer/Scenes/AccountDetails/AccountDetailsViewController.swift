@@ -43,7 +43,7 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
          */
         
         let presenter = AccountDetailsPresenter(
-            interactor: AccoundDetailsInteractor(
+            interactor: AccountDetailsInteractor(
                 // TODO: change here to point from real Network vs. local Stub
                 // Use `ServicesProvider.defaultProvider().network for the prod app.
                 networkService: ServicesProvider.localStubbedProvider().network

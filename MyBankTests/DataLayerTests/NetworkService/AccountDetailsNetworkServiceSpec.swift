@@ -22,13 +22,14 @@ final class AccountDetailsNetworkServiceSpec: QuickSpec {
             
             it("should call the load method on `NetworkService` with correct values being set") {
                 
+                // given
                 let netwotkServiceSpy = NetworkServiceSpy()
                 
-                // When
+                // when
                 _ = netwotkServiceSpy
                     .load(Resource<FullAccountDetailsResponse>.accountDetails(forAccountId: ""))
                 
-                // Then
+                // then
                 
                 // Spied call
                 expect(netwotkServiceSpy.loadReourceCalled).to(beTrue())
@@ -52,9 +53,10 @@ final class AccountDetailsNetworkServiceSpec: QuickSpec {
                 var expectedError: NetworkError?
                 var receivedResponse: FullAccountDetailsResponse?
                 
-                let networkServiceMock = NetworkServiceMock(response: self.sampleAcccountDetailsResponse())
+                // given
+                let networkServiceMock = NetworkServiceMock(response: TestHelper().sampleAccountDetailsFullResponse())
                 
-                // When
+                // when
                 networkServiceMock
                     .load(Resource<FullAccountDetailsResponse>.accountDetails(forAccountId: ""))
                     .sink(receiveValue: { result in
@@ -67,7 +69,7 @@ final class AccountDetailsNetworkServiceSpec: QuickSpec {
                      })
                     .store(in: &cancellables)
                 
-                // Then
+                // then
                 expect(expectedError).to(beNil())
                 
                 expect(receivedResponse).toNot(beNil())
@@ -89,12 +91,13 @@ final class AccountDetailsNetworkServiceSpec: QuickSpec {
                 var expectedError: NetworkError?
                 var receivedResponse: FullAccountDetailsResponse?
                 
+                // given
                 let networkServiceMock = NetworkServiceMock(
-                    response: self.sampleAcccountDetailsResponse(),
+                    response: TestHelper().sampleAccountDetailsFullResponse(),
                     returningError: true,
                     error: NetworkError.timeout)
                 
-                // When
+                // when
                 networkServiceMock
                     .load(Resource<FullAccountDetailsResponse>.accountDetails(forAccountId: ""))
                     .sink(receiveValue: { result in
@@ -107,21 +110,11 @@ final class AccountDetailsNetworkServiceSpec: QuickSpec {
                      })
                     .store(in: &cancellables)
                 
-                // Then
+                // then
                 expect(expectedError).toNot(beNil())
                 // TODO: check exact value as well and needs Nimble matcher for enum error
                 expect(receivedResponse).to(beNil())
             }
         }
-    }
-    
-    // MARK: - Test Helpers
-    
-    private func sampleAcccountDetailsResponse() -> FullAccountDetailsResponse {
-        let jsonDecoder = JSONDecoder()
-        jsonDecoder.dateDecodingStrategy = .formatted(DateFormattingHelper.shortDate)
-        let testJSONData = Bundle(for: type(of: self)).jsonData(forResource: "account_details_full")
-        let mappedItem = try! jsonDecoder.decode(FullAccountDetailsResponse.self, from: testJSONData)
-        return mappedItem
     }
 }

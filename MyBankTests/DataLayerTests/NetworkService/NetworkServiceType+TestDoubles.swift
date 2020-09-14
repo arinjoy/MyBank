@@ -59,7 +59,7 @@ final class NetworkServiceMock<ResponseType>: NetworkServiceType {
         if returningError {
             return Just(.failure(error)).eraseToAnyPublisher()
         }
-
+        
         return Just(.success(response as! T)).eraseToAnyPublisher()
     }
 }
