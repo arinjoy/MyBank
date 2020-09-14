@@ -20,6 +20,7 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
         let refreshControl = UIRefreshControl()
         refreshControl.backgroundColor = Theme.Color.tealBackground
         refreshControl.tintColor = Theme.Color.primaryText
+        refreshControl.accessibilityIdentifier = "accesssibilityId.account.details.refresh.control"
         return refreshControl
     }()
     
@@ -42,11 +43,20 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
          Ideally this depdendency injection can be done via 3rd party library like `Swinject`.
          */
         
+        // Choose the provider:
+        // - `localStubbedProvider` - local mock data from JSON file
+        // - `defaultProvider` - real network based data from defined endpoint
+        
+        var networkService = ServicesProvider.defaultProvider().network
+        
+#if DEBUG
+        if CommandLine.arguments.contains("UITestingMode") {
+            networkService = ServicesProvider.localStubbedProvider().network
+        }
+#endif
         let presenter = AccountDetailsPresenter(
             interactor: AccountDetailsInteractor(
-                // TODO: change here to point from real Network vs. local Stub
-                // Use `ServicesProvider.defaultProvider().network for the prod app.
-                networkService: ServicesProvider.localStubbedProvider().network
+                networkService: networkService
             )
         )
         presenter.display = self
@@ -60,7 +70,7 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .yellow
+        navigationController?.navigationBar.accessibilityIdentifier = "accesssibilityId.account.details.navbar.title"
         
         configureTableView()
         
@@ -142,6 +152,7 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
     
         tableView.tableHeaderView = UIView()
         tableView.tableFooterView = UIView()
+        tableView.accessibilityIdentifier = "accesssibilityId.account.details.table"
     }
     
     @objc
