@@ -47,6 +47,13 @@ final class AccountDetailsDataMapingSpec: QuickSpec {
                     expect(mappedItem?.clearedTransactions.first?.timestamp).to(equal(self.dateFromString("20/12/2019")))
                     expect(mappedItem?.clearedTransactions.first?.atmId).to(equal("129382"))
                     
+                    expect(mappedItem?.pendingTransactions.count).to(equal(2))
+                    expect(mappedItem?.pendingTransactions.first?.identifier).to(equal("e2eff6c2dafd909df8508f891b385d88"))
+                    expect(mappedItem?.pendingTransactions.first?.amount).to(equal(-12.55))
+                    expect(mappedItem?.pendingTransactions.first?.narrative).to(equal("WILSON PARKING SYDOBS SYDNEY NS AUS<br/>LAST 4 CARD DIGITS: 6901"))
+                    expect(mappedItem?.pendingTransactions.first?.timestamp).to(equal(self.dateFromString("22/08/2020")))
+                    expect(mappedItem?.pendingTransactions.first?.atmId).to(equal("137483"))
+                    
                     expect(mappedItem?.atmLocations.count).to(equal(2))
                     expect(mappedItem?.atmLocations.first?.identifier).to(equal("129382"))
                     expect(mappedItem?.atmLocations.first?.name).to(equal("Circular Quay Station"))
