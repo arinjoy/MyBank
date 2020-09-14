@@ -6,6 +6,7 @@
 //  Copyright © 2020 Arinjoy Biswas. All rights reserved.
 //
 
+import UIKit.UIImage
 import Quick
 import Nimble
 @testable import MyBank
@@ -46,6 +47,7 @@ final class TransactionListTransformerSpec: QuickSpec {
                 // It's pending transaction, description has it injected
                 expect(section1?.transactionItems.first?.description.string).to(equal("PENDING: A long description"))
                 expect(section1?.transactionItems.first?.amountText).to(equal("-$5,555.44"))
+                
                 expect(section1?.transactionItems.first?.accessibility?.identifier)
                     .to(equal("accessibilityId.account.details.transaction.cell"))
                 expect(section1?.transactionItems.first?.accessibility?.label)
@@ -53,14 +55,16 @@ final class TransactionListTransformerSpec: QuickSpec {
                 expect(section1?.transactionItems.first?.accessibility?.traits).to(equal(.staticText))
  
                 // Second one is an atm transaction, hence icon is `not nil`
-                expect(section1?.transactionItems.last?.atmIcon).toNot(beNil())
-                // It's not pending
+                expect(section1?.transactionItems.last?.atmIcon).to(equal(UIImage(named: "FindUsIcon")!))
+                // It's not pending, no keyword injected
                 expect(section1?.transactionItems.last?.description.string).to(equal("A short description is enough"))
                 expect(section1?.transactionItems.last?.amountText).to(equal("$120.23"))
+                
                 expect(section1?.transactionItems.last?.accessibility?.identifier)
                     .to(equal("accessibilityId.account.details.transaction.cell"))
                 expect(section1?.transactionItems.last?.accessibility?.label)
                     .to(equal("Cleared transaction, A short description is enough, amount $120.23"))
+                // Accessbility trait is correct as its tappable cell with atm transaction
                 expect(section1?.transactionItems.last?.accessibility?.traits).to(equal(.button))
                 expect(section1?.transactionItems.last?.accessibility?.hint)
                     .to(equal("Double click to see the ATM location on map"))
