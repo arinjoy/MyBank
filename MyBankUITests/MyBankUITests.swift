@@ -8,7 +8,7 @@
 
 import XCTest
 
-class MyBankUITests: XCTestCase {
+final class MyBankUITests: XCTestCase {
 
     override func setUpWithError() throws {
         continueAfterFailure = true
@@ -69,7 +69,7 @@ class MyBankUITests: XCTestCase {
         
         sleep(1)
         
-        let atmViewNavarBar = app.navigationBars.staticTexts["Circular Quay Station"].firstMatch
-        XCTAssertTrue(atmViewNavarBar.exists)
+        let atmViewNavBar = app.navigationBars.staticTexts["ATM Location"].firstMatch
+        XCTAssertTrue(atmViewNavBar.exists)
     }
 }
