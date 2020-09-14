@@ -87,11 +87,12 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
     }
     
     func updateAccountDetailsHeader() {
-        // TODO: Handle self sizing of the height correctly using auto layout to recalculate
+        
+        // TODO: Handle self sizing of the height correctly using auto layout to re-calculate
         // in case contentSizeCategory changes and height grows with dynamic font
         guard let item = presenter.accountDetailsPresentationItem else { return }
         
-        // Setting a fixed 185 might a good idea here to support font scaling
+        // Setting a fixed 185 is not a great idea here to support font scaling
         accountDetailsHeaderView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 185)
         accountDetailsHeaderView.configure(withPresentationItem: item)
         
