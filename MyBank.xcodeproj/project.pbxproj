@@ -42,6 +42,7 @@
 		0E5B1E47250CC03100A6A724 /* DataTransforming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E46250CC03100A6A724 /* DataTransforming.swift */; };
 		0E5B1E49250CC2B000A6A724 /* AccountDetailsPresentationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E48250CC2B000A6A724 /* AccountDetailsPresentationItem.swift */; };
 		0E998D50250F3E4000E20395 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E998D4F250F3E4000E20395 /* TestHelper.swift */; };
+		0E998D53250F4B4000E20395 /* TransactionListTransformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E998D52250F4B4000E20395 /* TransactionListTransformerSpec.swift */; };
 		0EA6D937250D9CDB0086DCB7 /* AccountDetailsDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D936250D9CDB0086DCB7 /* AccountDetailsDisplay.swift */; };
 		0EA6D939250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D938250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift */; };
 		0EA6D93B250DA9CF0086DCB7 /* GroupedTransactionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D93A250DA9CF0086DCB7 /* GroupedTransactionsSection.swift */; };
@@ -115,6 +116,7 @@
 		0E5B1E46250CC03100A6A724 /* DataTransforming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransforming.swift; sourceTree = "<group>"; };
 		0E5B1E48250CC2B000A6A724 /* AccountDetailsPresentationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsPresentationItem.swift; sourceTree = "<group>"; };
 		0E998D4F250F3E4000E20395 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		0E998D52250F4B4000E20395 /* TransactionListTransformerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListTransformerSpec.swift; sourceTree = "<group>"; };
 		0EA6D936250D9CDB0086DCB7 /* AccountDetailsDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsDisplay.swift; sourceTree = "<group>"; };
 		0EA6D938250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSectionHeaderPresentationItem.swift; sourceTree = "<group>"; };
 		0EA6D93A250DA9CF0086DCB7 /* GroupedTransactionsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedTransactionsSection.swift; sourceTree = "<group>"; };
@@ -198,8 +200,12 @@
 		0E5B1DEE250C246700A6A724 /* MyBankTests */ = {
 			isa = PBXGroup;
 			children = (
+				0E998D51250F4B1600E20395 /* PresentationTests */,
 				0EA6D9B1250F35470086DCB7 /* DomainLayerTests */,
 				0EA6D99E250EF4350086DCB7 /* DataLayerTests */,
+				0EA6D9A2250EFC080086DCB7 /* Bundle+JSONForResource.swift */,
+				0E998D4F250F3E4000E20395 /* TestHelper.swift */,
+				0EA6D9A5250EFC440086DCB7 /* TestResources */,
 				0E5B1DF1250C246700A6A724 /* Info.plist */,
 			);
 			path = MyBankTests;
@@ -360,6 +366,14 @@
 			path = Transformers;
 			sourceTree = "<group>";
 		};
+		0E998D51250F4B1600E20395 /* PresentationTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E998D52250F4B4000E20395 /* TransactionListTransformerSpec.swift */,
+			);
+			path = PresentationTests;
+			sourceTree = "<group>";
+		};
 		0EA6D948250DFF480086DCB7 /* TransactionSectionHeader */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,9 +418,6 @@
 			children = (
 				0EA6D9A0250EF48C0086DCB7 /* AccountDetails+DataMapingSpec.swift */,
 				0EA6D9AE250F0B420086DCB7 /* NetworkService */,
-				0EA6D9A2250EFC080086DCB7 /* Bundle+JSONForResource.swift */,
-				0E998D4F250F3E4000E20395 /* TestHelper.swift */,
-				0EA6D9A5250EFC440086DCB7 /* TestResources */,
 				0EA6D99F250EF48C0086DCB7 /* MyBankTests-Bridging-Header.h */,
 			);
 			path = DataLayerTests;
@@ -603,6 +614,7 @@
 				0EA6D9AD250F08A70086DCB7 /* NetworkServiceType+TestDoubles.swift in Sources */,
 				0E998D50250F3E4000E20395 /* TestHelper.swift in Sources */,
 				0EA6D9B0250F0B6B0086DCB7 /* AccountDetailsNetworkServiceSpec.swift in Sources */,
+				0E998D53250F4B4000E20395 /* TransactionListTransformerSpec.swift in Sources */,
 				0EA6D9A1250EF48C0086DCB7 /* AccountDetails+DataMapingSpec.swift in Sources */,
 				0EA6D9A3250EFC080086DCB7 /* Bundle+JSONForResource.swift in Sources */,
 				0EA6D9B3250F35700086DCB7 /* AccountDetailsInteractorSpec.swift in Sources */,
