@@ -44,6 +44,8 @@
 		0E998D50250F3E4000E20395 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E998D4F250F3E4000E20395 /* TestHelper.swift */; };
 		0E998D53250F4B4000E20395 /* TransactionListTransformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E998D52250F4B4000E20395 /* TransactionListTransformerSpec.swift */; };
 		0E998D55250F55A500E20395 /* AccountDetailsTransformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E998D54250F55A500E20395 /* AccountDetailsTransformerSpec.swift */; };
+		0E998D57250F5B4500E20395 /* AccountDetailsPresenter+TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E998D56250F5B4500E20395 /* AccountDetailsPresenter+TestDoubles.swift */; };
+		0E998D59250F5B5A00E20395 /* AccountDetailsPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E998D58250F5B5A00E20395 /* AccountDetailsPresenterSpec.swift */; };
 		0EA6D937250D9CDB0086DCB7 /* AccountDetailsDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D936250D9CDB0086DCB7 /* AccountDetailsDisplay.swift */; };
 		0EA6D939250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D938250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift */; };
 		0EA6D93B250DA9CF0086DCB7 /* GroupedTransactionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D93A250DA9CF0086DCB7 /* GroupedTransactionsSection.swift */; };
@@ -119,6 +121,8 @@
 		0E998D4F250F3E4000E20395 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		0E998D52250F4B4000E20395 /* TransactionListTransformerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListTransformerSpec.swift; sourceTree = "<group>"; };
 		0E998D54250F55A500E20395 /* AccountDetailsTransformerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsTransformerSpec.swift; sourceTree = "<group>"; };
+		0E998D56250F5B4500E20395 /* AccountDetailsPresenter+TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountDetailsPresenter+TestDoubles.swift"; sourceTree = "<group>"; };
+		0E998D58250F5B5A00E20395 /* AccountDetailsPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsPresenterSpec.swift; sourceTree = "<group>"; };
 		0EA6D936250D9CDB0086DCB7 /* AccountDetailsDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsDisplay.swift; sourceTree = "<group>"; };
 		0EA6D938250DA99C0086DCB7 /* TransactionSectionHeaderPresentationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSectionHeaderPresentationItem.swift; sourceTree = "<group>"; };
 		0EA6D93A250DA9CF0086DCB7 /* GroupedTransactionsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedTransactionsSection.swift; sourceTree = "<group>"; };
@@ -373,6 +377,8 @@
 			children = (
 				0E998D54250F55A500E20395 /* AccountDetailsTransformerSpec.swift */,
 				0E998D52250F4B4000E20395 /* TransactionListTransformerSpec.swift */,
+				0E998D58250F5B5A00E20395 /* AccountDetailsPresenterSpec.swift */,
+				0E998D56250F5B4500E20395 /* AccountDetailsPresenter+TestDoubles.swift */,
 			);
 			path = PresentationTests;
 			sourceTree = "<group>";
@@ -618,7 +624,9 @@
 				0E998D50250F3E4000E20395 /* TestHelper.swift in Sources */,
 				0EA6D9B0250F0B6B0086DCB7 /* AccountDetailsNetworkServiceSpec.swift in Sources */,
 				0E998D53250F4B4000E20395 /* TransactionListTransformerSpec.swift in Sources */,
+				0E998D57250F5B4500E20395 /* AccountDetailsPresenter+TestDoubles.swift in Sources */,
 				0EA6D9A1250EF48C0086DCB7 /* AccountDetails+DataMapingSpec.swift in Sources */,
+				0E998D59250F5B5A00E20395 /* AccountDetailsPresenterSpec.swift in Sources */,
 				0EA6D9A3250EFC080086DCB7 /* Bundle+JSONForResource.swift in Sources */,
 				0EA6D9B3250F35700086DCB7 /* AccountDetailsInteractorSpec.swift in Sources */,
 				0E998D55250F55A500E20395 /* AccountDetailsTransformerSpec.swift in Sources */,

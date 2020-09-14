@@ -54,4 +54,10 @@ class TestHelper {
         )
         return [group1, group2]
     }
+    
+    func sampleAccountDetailsWithTransactionHistory() -> AccountDetailsWithTransactionHistory {
+        return AccountDetailsWithTransactionHistory(
+            accountDetails: TestHelper().sampleAccountDetailsFullResponse().accountDetails,
+            transactionsGroups: TestHelper.sampleTransactionGroups())
+    }
 }

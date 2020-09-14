@@ -97,16 +97,18 @@ final class AccountDetailsPresenter: AccountDetailsPresenting {
                     
                 case .failure(let error):
                     
-                    let errorTitle: String = StringKeys.MyBank.genericErrorTitle.localized()
+                    var errorTitle: String = StringKeys.MyBank.genericErrorTitle.localized()
                     let errorDismissTitle: String = StringKeys.MyBank.errorDismissActionTitle.localized()
                     var errorMessage: String
                     switch error {
                         // Show network connectivity error
                     case .networkFailure, .timeout:
+                        errorTitle = StringKeys.MyBank.networkConnectionErrorTitle.localized()
                         errorMessage = StringKeys.MyBank.networkConnectionErrorMessage.localized()
                     default:
                         // For all other errors, show this generic error
                         // This can be elaborated case by case basis of custom error handling
+                        errorTitle = StringKeys.MyBank.genericErrorTitle.localized()
                         errorMessage = StringKeys.MyBank.genericErrorMessage.localized()
                     }
                     

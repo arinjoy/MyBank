@@ -26,6 +26,7 @@ extension StringKeys {
         case genericErrorTitle = "error.generic.title"
         case genericErrorMessage = "error.generic.message"
         case errorDismissActionTitle = "error.dismiss.action.title"
+        case networkConnectionErrorTitle = "error.networkConnection.title"
         case networkConnectionErrorMessage = "error.networkConnection.message"
 
         // MARK: - LocalizationKeys

@@ -15,5 +15,6 @@
 
 "error.generic.title" = "Oops! Something wrong.";
 "error.generic.message" = "There is a generic error. Please try again later.";
+"error.networkConnection.title" = "You're offline!";
 "error.networkConnection.message" = "Please check your network connection and try again.";
 "error.dismiss.action.title" = "OK";

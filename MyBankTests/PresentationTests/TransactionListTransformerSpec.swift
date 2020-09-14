@@ -32,7 +32,7 @@ final class TransactionListTransformerSpec: QuickSpec {
                 
                 let section1 = results.first
                 expect(section1?.headerItem.title).to(equal("20 Feb 2020"))
-                // Note: this below test is current system date depdendent, hence will fail in future months
+                // Note: this below test is current system date dependent, hence will fail in future months
                 // expect(section1?.headerItem.subtitle).to(equal("7 months ago"))
                 expect(section1?.headerItem.accessibility?.identifier)
                     .to(equal("accessibilityId.account.details.transaction.section.header"))
@@ -71,7 +71,7 @@ final class TransactionListTransformerSpec: QuickSpec {
                 
                 let section2 = results.last
                 expect(section2?.headerItem.title).to(equal("12 Jun 2019"))
-                // Note: this below test is current system date depdendent, hence will fail in future months
+                // Note: this below test is current system date dependent, hence will fail in future years
                 // expect(section2?.headerItem.subtitle).to(equal("1 year ago"))
                 expect(section2?.headerItem.accessibility?.identifier)
                     .to(equal("accessibilityId.account.details.transaction.section.header"))

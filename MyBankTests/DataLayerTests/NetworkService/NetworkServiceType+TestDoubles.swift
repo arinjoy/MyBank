@@ -30,7 +30,7 @@ final class NetworkServiceSpy: NetworkServiceType {
         request = resource.request
         isLocalStub = resource.isLocalStub
         
-        return Empty<Result<T, NetworkError>, Never>().eraseToAnyPublisher()
+        return Empty().eraseToAnyPublisher()
     }
 }
 

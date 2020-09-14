@@ -20,7 +20,7 @@ protocol AccountDetailsDisplay: class {
     /// Will be called to update the transaction history
     func updateTransactionList()
     
-    /// Will be called to show loading indicator while facts are being fetched
+    /// Will be called to show loading indicator while  account deatils are being fetched
     func showLoadingIndicator()
     
     /// Will be called to hide the loading indicator
