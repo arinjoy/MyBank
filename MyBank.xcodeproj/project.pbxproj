@@ -53,6 +53,7 @@
 		0EA6D94C250E3C610086DCB7 /* AccountDetailsTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D94B250E3C610086DCB7 /* AccountDetailsTransformer.swift */; };
 		0EA6D94F250E53DF0086DCB7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D94E250E53DF0086DCB7 /* MapView.swift */; };
 		0EA6D995250EDD1E0086DCB7 /* ATMMapContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D994250EDD1E0086DCB7 /* ATMMapContentView.swift */; };
+		0EA6D997250EE7DD0086DCB7 /* AccountDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D996250EE7DD0086DCB7 /* AccountDetailsRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		0EA6D94B250E3C610086DCB7 /* AccountDetailsTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsTransformer.swift; sourceTree = "<group>"; };
 		0EA6D94E250E53DF0086DCB7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		0EA6D994250EDD1E0086DCB7 /* ATMMapContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATMMapContentView.swift; sourceTree = "<group>"; };
+		0EA6D996250EE7DD0086DCB7 /* AccountDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,8 +313,9 @@
 				0E5B1E2D250C633800A6A724 /* UIComponents */,
 				0E5B1E43250CBF7200A6A724 /* Transformers */,
 				0E5B1DDC250C246500A6A724 /* AccountDetailsViewController.swift */,
-				0E5B1E41250CBEEB00A6A724 /* AccountDetailsPresenter.swift */,
 				0EA6D936250D9CDB0086DCB7 /* AccountDetailsDisplay.swift */,
+				0E5B1E41250CBEEB00A6A724 /* AccountDetailsPresenter.swift */,
+				0EA6D996250EE7DD0086DCB7 /* AccountDetailsRouter.swift */,
 			);
 			path = AccountDetails;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				0E59B71A250CF6D500DF7162 /* TransctionSectionHeaderView.swift in Sources */,
 				0E5B1E13250C392200A6A724 /* NetworkServiceType.swift in Sources */,
 				0E5B1E11250C38AF00A6A724 /* ServicesProvider.swift in Sources */,
+				0EA6D997250EE7DD0086DCB7 /* AccountDetailsRouter.swift in Sources */,
 				0E5B1E03250C2B4B00A6A724 /* Theme.swift in Sources */,
 				0EA6D94F250E53DF0086DCB7 /* MapView.swift in Sources */,
 				0E5B1E49250CC2B000A6A724 /* AccountDetailsPresentationItem.swift in Sources */,

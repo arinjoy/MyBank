@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftUI
 
 final class AccountDetailsViewController: UIViewController, AccountDetailsDisplay {
 
@@ -26,10 +25,10 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
     
     // MARK: - Private Properties
 
-    typealias DataSource = UITableViewDiffableDataSource<GroupedTransactionSection, TransactionPresentationItem>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<GroupedTransactionSection, TransactionPresentationItem>
+    typealias DataSource = UITableViewDiffableDataSource<GroupedTransactionSectionPresentationItem, TransactionPresentationItem>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<GroupedTransactionSectionPresentationItem, TransactionPresentationItem>
     
-    private lazy var dataSource: UITableViewDiffableDataSource<GroupedTransactionSection, TransactionPresentationItem> = {
+    private lazy var dataSource: UITableViewDiffableDataSource<GroupedTransactionSectionPresentationItem, TransactionPresentationItem> = {
         return makeDataSource()
     }()
     
@@ -39,24 +38,23 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
     private lazy var presenter: AccountDetailsPresenting = {
         
         /**
-         Tech note:
-         A chain of depdendency injection layer by layer, and each layer is individually unit tested
-         Ideally this depdendency injection can be done via 3rd party library like `Swinject`
+         Tech note: A chain of depdendency injection layer by layer, and each layer is individually unit tested.
+         Ideally this depdendency injection can be done via 3rd party library like `Swinject`.
          */
         
         let presenter = AccountDetailsPresenter(
             interactor: AccoundDetailsInteractor(
-                
-                // TODO: change here to point from realNetworks vs. local Stub
-                // Use `ServicesProvider.defaultProvider().network
-                
+                // TODO: change here to point from real Network vs. local Stub
+                // Use `ServicesProvider.defaultProvider().network for the prod app.
                 networkService: ServicesProvider.localStubbedProvider().network
             )
         )
         presenter.display = self
+        presenter.router = AccountDetailsRouter(sourceViewController: self)
         return presenter
     }()
 
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -70,6 +68,7 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
         
         presenter.loadAccountDetailsAndTransactions(isRereshingNeeded: true)
     }
+    
     
     // MARK: - AccountDetailsDisplay
     
@@ -120,6 +119,7 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
         present(alertController, animated: true, completion: nil)
     }
     
+    
     // MARK: - Private Helpers
     
     private func configureTableView() {
@@ -149,7 +149,7 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
         presenter.loadAccountDetailsAndTransactions(isRereshingNeeded: true)
     }
     
-    private func makeDataSource() -> UITableViewDiffableDataSource<GroupedTransactionSection, TransactionPresentationItem> {
+    private func makeDataSource() -> UITableViewDiffableDataSource<GroupedTransactionSectionPresentationItem, TransactionPresentationItem> {
         let dataSource = DataSource(
             tableView: tableView,
             cellProvider: { tableView, indexPath, item in
@@ -179,16 +179,8 @@ extension AccountDetailsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        // TODO: Pass in real data based on which transaction is tapped
-        
-        let atmMapView = ATMMapContentView(
-            withaAtmLocation: ATMLocation(identifier: "111111",
-                                          name: "CBA Circular Quay Station",
-                                          address: "8 Alfred St, Sydney, NSW 2000",
-                                          coordinate: Coordinate(latitude: -33.861382,
-                                                                 longitude: 151.210316)))
-        let hostingVC = UIHostingController(rootView: atmMapView)
-        navigationController?.pushViewController(hostingVC, animated: true)
+        // Just tell the presenter to take any responisbility which would make the correct
+        // decision and logic and act via the router
+        presenter.didTapTransaction(at: indexPath)
     }
 }

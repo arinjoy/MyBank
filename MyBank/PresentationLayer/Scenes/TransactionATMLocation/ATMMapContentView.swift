@@ -11,9 +11,9 @@ import MapKit
 
 struct ATMMapContentView: View {
 
-    private var atmPinAnnotation: MKPointAnnotation
+    private var atmAnnotation: MKPointAnnotation
     
-    init(withaAtmLocation atmLocation: ATMLocation) {
+    init(withAtmLocation atmLocation: ATMLocation) {
         let annotation = MKPointAnnotation()
         annotation.title = atmLocation.name
         annotation.subtitle = atmLocation.address
@@ -21,7 +21,7 @@ struct ATMMapContentView: View {
             latitude: NSDecimalNumber(decimal: atmLocation.coordinate.latitude).doubleValue,
             longitude: NSDecimalNumber(decimal: atmLocation.coordinate.longitude).doubleValue
         )
-        self.atmPinAnnotation = annotation
+        self.atmAnnotation = annotation
     }
 
     var body: some View {
@@ -34,6 +34,6 @@ struct ATMMapContentView: View {
                        alignment: .center)
         }
         .edgesIgnoringSafeArea(.all)
-        .navigationBarTitle(Text(atmPinAnnotation.title ?? ""), displayMode: .inline)
+        .navigationBarTitle(Text(atmAnnotation.title ?? ""), displayMode: .inline)
     }
 }

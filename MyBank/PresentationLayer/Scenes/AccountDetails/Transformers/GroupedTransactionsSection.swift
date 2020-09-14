@@ -1,5 +1,5 @@
 //
-//  GroupedTransactionsSection.swift
+//  GroupedTransactionSectionPresentationItem.swift
 //  MyBank
 //
 //  Created by Arinjoy Biswas on 13/9/20.
@@ -8,19 +8,19 @@
 
 import Foundation
 
-struct GroupedTransactionSection {
+struct GroupedTransactionSectionPresentationItem {
 
     var headerItem: TransctionSectionHeaderPresentationItem
     var transactionItems: [TransactionPresentationItem]
 }
 
-extension GroupedTransactionSection: Hashable {
+extension GroupedTransactionSectionPresentationItem: Hashable {
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(headerItem)
     }
 
-    static func == (lhs: GroupedTransactionSection, rhs: GroupedTransactionSection) -> Bool {
+    static func == (lhs: GroupedTransactionSectionPresentationItem, rhs: GroupedTransactionSectionPresentationItem) -> Bool {
         lhs.headerItem == rhs.headerItem
     }
 }

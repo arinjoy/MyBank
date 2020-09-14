@@ -11,9 +11,9 @@ import UIKit
 
 struct TransactionListTransformer: DataTransforming {
     
-    func transform(input: [TransactionGroup]) -> [GroupedTransactionSection] {
+    func transform(input: [TransactionGroup]) -> [GroupedTransactionSectionPresentationItem] {
         
-        var sections: [GroupedTransactionSection] = []
+        var sections: [GroupedTransactionSectionPresentationItem] = []
         for group in input {
             let items = group.transactions.map { tranformTransaction($0) }
 
@@ -29,7 +29,7 @@ struct TransactionListTransformer: DataTransforming {
                 label: UIAccessibility.createCombinedAccessibilityLabel(from: [formattedDateText, datesAgoText]),
                 traits: .header)
   
-            let section = GroupedTransactionSection(
+            let section = GroupedTransactionSectionPresentationItem(
                 headerItem: TransctionSectionHeaderPresentationItem(title: formattedDateText,
                                                                     subtitle: datesAgoText,
                                                                     accessibility: headerAccessibility),

@@ -23,14 +23,20 @@ protocol AccountDetailsPresenting: class {
     /// The UI level presentation item for the  account details header section
     var accountDetailsPresentationItem: AccountDetailsPresentationItem? { get }
     
-    /// The transformed list data of transaction history ready to be bind with list UI
-    var transactionGroupsDataSource: [GroupedTransactionSection] { get }
+    /// The transformed list data (in presentation item format) of transaction history ready to be bind with list UI
+    var transactionGroupsDataSource: [GroupedTransactionSectionPresentationItem] { get }
+    
+    /// Will be called when user taps on a tranaction on the list
+    func didTapTransaction(at indexPath: IndexPath)
 }
 
 final class AccountDetailsPresenter: AccountDetailsPresenting {
 
     /// The front-facing view that conforms to the `AccountDetailsDisplay` protocol
     weak var display: AccountDetailsDisplay?
+    
+    /// The routing instance for the presenter 
+    var router: AccountDetailsRouting?
         
     
     // MARK: - Private Properties
@@ -117,8 +123,22 @@ final class AccountDetailsPresenter: AccountDetailsPresenting {
         return accountDetailsTransformer.transform(input: accountDetails)
     }
     
-    var transactionGroupsDataSource: [GroupedTransactionSection] {
+    var transactionGroupsDataSource: [GroupedTransactionSectionPresentationItem] {
         guard let data = accountDetailsWithTransactionData, !data.transactionsGroups.isEmpty else { return [] }
         return transactionListTransformer.transform(input: data.transactionsGroups)
+    }
+    
+    func didTapTransaction(at indexPath: IndexPath) {
+        guard
+            let data = accountDetailsWithTransactionData,
+            !data.transactionsGroups.isEmpty,
+            indexPath.section < data.transactionsGroups.count,
+            indexPath.row < data.transactionsGroups[indexPath.section].transactions.count,
+            let atmLocation = data.transactionsGroups[indexPath.section].transactions[indexPath.row].atmLocation
+        else {
+            // Either the item could not be found or that particular transaction might not have an atm location
+            return
+        }
+        router?.routeToAtmLocationMap(withWithAtmLocation: atmLocation)
     }
 }
