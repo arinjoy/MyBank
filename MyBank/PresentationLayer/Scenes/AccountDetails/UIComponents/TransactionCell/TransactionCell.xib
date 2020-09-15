@@ -46,8 +46,12 @@
                         <variation key="heightClass=compact" constant="120"/>
                     </constraint>
                     <constraint firstAttribute="trailing" secondItem="Gft-Ql-iIF" secondAttribute="trailing" constant="16" id="l1V-KE-mO4"/>
-                    <constraint firstAttribute="bottom" secondItem="wEM-6W-mrB" secondAttribute="bottom" constant="10" id="mK0-FZ-sM7"/>
-                    <constraint firstItem="wEM-6W-mrB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="nIL-19-vbd"/>
+                    <constraint firstAttribute="bottom" secondItem="wEM-6W-mrB" secondAttribute="bottom" constant="10" id="mK0-FZ-sM7">
+                        <variation key="widthClass=regular" constant="16"/>
+                    </constraint>
+                    <constraint firstItem="wEM-6W-mrB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="nIL-19-vbd">
+                        <variation key="widthClass=regular" constant="16"/>
+                    </constraint>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
