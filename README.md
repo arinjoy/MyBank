@@ -11,13 +11,23 @@ An app made with ❤️ to demonstrate some examples of **clean architecture**, 
  - Some of the transactions are ATM based and they show location icon and tapping those transactions navigate to the ATM location page on a map view
  - Add support for iOS 13 **Dark mode** 
  
-The data for the `account details + transaction history + atm locations` are all combined together and comes from the this json file at: https://www.dropbox.com/s/tewg9b71x0wrou9/data.json?dl=1
+The data for the `account details + transaction history + atm locations` are all combined together and comes from the this json file hosted in dropbox.
+
+Refer to the following lines 50 and 51 in `AccountDetailsViewController.swift` to make change between local/remote data.
+
+```
+// var networkService = ServicesProvider.defaultProvider().network
+var networkService = ServicesProvider.localStubbedProvider().network
+```
+
 The code also pulls this data locally from a JSON file if needed and used for testing, debugging purposes, Particularly XCUITest picks the data from a local stubbed JSON file.
  
 ### Screenshots:
 ![](/Screenshots/screenshot-1.png "")
 ![](/Screenshots/screenshot-2.png "")
-![](/Screenshots/screenshot-2.png "")
+![](/Screenshots/screenshot-9.png "")
+![](/Screenshots/screenshot-3.png "")
+
 
 ### Installation
  - Xcode 11.6+ (required)
@@ -106,4 +116,3 @@ These domain level models get mapped into presentation level models at presentat
 - This follows the coordinator pattern to talk to MapKit delegate
 - A custom pin image has been attached to the annotation
 - The code is kept very simple and not unit tested
-![](/Screenshots/screenshot-10.png "")
