@@ -25,8 +25,6 @@ The code also pulls this data locally from a JSON file if needed and used for te
 ### Screenshots:
 ![](/Screenshots/screenshot-1.png "")
 ![](/Screenshots/screenshot-2.png "")
-![](/Screenshots/screenshot-9.png "")
-![](/Screenshots/screenshot-3.png "")
 
 
 ### Installation
@@ -116,3 +114,4 @@ These domain level models get mapped into presentation level models at presentat
 - This follows the coordinator pattern to talk to MapKit delegate
 - A custom pin image has been attached to the annotation
 - The code is kept very simple and not unit tested
+![](/Screenshots/screenshot-9.png "")
