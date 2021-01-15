@@ -37,7 +37,7 @@ class ServicesProvider {
     /// The helping provider to fetch locally from stub JSON file
     static func localStubbedProvider() -> ServicesProvider {
         // Slightly modified version with more recent dates used for testing
-        let localStubbedNetwork = LocalStubbedDataService(withLocalFile: "account_data_modified")
+        let localStubbedNetwork = LocalStubbedDataService(withLocalFile: "account_data")
         return ServicesProvider(network: localStubbedNetwork)
     }
 

@@ -42,7 +42,7 @@ final class MyBankUITests: XCTestCase {
         XCTAssertTrue(accountDetailsHeader.exists)
         XCTAssertEqual(accountDetailsHeader.accessibilityTraits.rawValue, 0) // header trait
         XCTAssertEqual(accountDetailsHeader.label,
-                       "Account Arinjoy Big Saver, Account number 062003 29299 9292, with Available funds $10,000.55, and Account balance $999.99")
+                       "Account Big Saver, Account number 062003 29299 9292, with Available funds $10,000.55, and Account balance $999.99")
         
         
         let sectionHeader1 =  tableView.otherElements.matching(
@@ -55,7 +55,7 @@ final class MyBankUITests: XCTestCase {
         XCTAssertTrue(staticTextCell1.exists)
         XCTAssertEqual(staticTextCell1.accessibilityTraits.rawValue, 0)
         XCTAssertEqual(staticTextCell1.label,
-                       "Pending transaction, CITYOFSYDNEYPARKINGTX SYDNEY, 1215\nLAST 4 CARD DIGITS: 6901, amount -$855.00")
+                       "Pending transaction, CITYOFSYDNEYPARKING SYDNEY, 1215\nLAST 4 CARD DIGITS: 6901, amount -$855.00")
         
         // tapple cells have .button trait which gets translated as cells here
         let tappableCell1 = tableView.cells.matching(
@@ -63,7 +63,7 @@ final class MyBankUITests: XCTestCase {
         XCTAssertTrue(tappableCell1.exists)
         XCTAssertEqual(tappableCell1.accessibilityTraits.rawValue, 0)
         XCTAssertEqual(tappableCell1.label,
-                       "Cleared transaction, Wdl ATM CBA ATM CIRCULAR QUAY STATION NSW 221092 AUS 🚗🚕 🚌, amount -$200.00")
+                       "Cleared transaction, WDL NAB ATM CIRCULAR QUAY STATION NSW 221092 AUS 🚗🚕🚌, amount -$200.00")
         
         tappableCell1.tap()
         

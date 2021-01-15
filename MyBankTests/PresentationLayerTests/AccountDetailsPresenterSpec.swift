@@ -225,7 +225,7 @@ final class AccountDetailsPresenterSpec: QuickSpec {
                     expect(routerSpy.atmMapViewModel?.atmLocation.coordinate.longitude)
                         .toEventually(equal(151.21031600000002048))
                     expect(routerSpy.atmMapViewModel?.customPinImage)
-                        .toEventually(equal(UIImage(named: "CBAFindUsAnnotationIconATM")!))
+                        .toEventually(equal(Theme.Icon.atmFindUsPin.image))
                 }
             }
         }

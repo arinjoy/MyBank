@@ -17,7 +17,6 @@
 		0E5B1DE0250C246500A6A724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B1DDE250C246500A6A724 /* Main.storyboard */; };
 		0E5B1DE2250C246600A6A724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B1DE1250C246600A6A724 /* Assets.xcassets */; };
 		0E5B1DE5250C246600A6A724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B1DE3250C246600A6A724 /* LaunchScreen.storyboard */; };
-		0E5B1DFF250C2AB100A6A724 /* account_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B1DFE250C2AB100A6A724 /* account_data.json */; };
 		0E5B1E03250C2B4B00A6A724 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E02250C2B4B00A6A724 /* Theme.swift */; };
 		0E5B1E06250C307600A6A724 /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E05250C307600A6A724 /* LocalizationKeys.swift */; };
 		0E5B1E08250C30AA00A6A724 /* MyBank+StringKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1E07250C30AA00A6A724 /* MyBank+StringKeys.swift */; };
@@ -53,7 +52,7 @@
 		0EA6D93B250DA9CF0086DCB7 /* GroupedTransactionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D93A250DA9CF0086DCB7 /* GroupedTransactionsSection.swift */; };
 		0EA6D93E250DB3D80086DCB7 /* NumberFormatter+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D93D250DB3D80086DCB7 /* NumberFormatter+Helpers.swift */; };
 		0EA6D941250DCDF40086DCB7 /* LocalStubbedDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D940250DCDF40086DCB7 /* LocalStubbedDataService.swift */; };
-		0EA6D943250DDC470086DCB7 /* account_data_modified.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA6D942250DDC470086DCB7 /* account_data_modified.json */; };
+		0EA6D943250DDC470086DCB7 /* account_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA6D942250DDC470086DCB7 /* account_data.json */; };
 		0EA6D945250DE4F40086DCB7 /* AccountDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D944250DE4F40086DCB7 /* AccountDetailsHeaderView.swift */; };
 		0EA6D947250DE57D0086DCB7 /* AccountDetailsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EA6D946250DE57D0086DCB7 /* AccountDetailsHeaderView.xib */; };
 		0EA6D94C250E3C610086DCB7 /* AccountDetailsTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6D94B250E3C610086DCB7 /* AccountDetailsTransformer.swift */; };
@@ -103,7 +102,6 @@
 		0E5B1DE6250C246600A6A724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E5B1DEB250C246700A6A724 /* MyBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5B1DF1250C246700A6A724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E5B1DFE250C2AB100A6A724 /* account_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = account_data.json; sourceTree = "<group>"; };
 		0E5B1E02250C2B4B00A6A724 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		0E5B1E05250C307600A6A724 /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
 		0E5B1E07250C30AA00A6A724 /* MyBank+StringKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyBank+StringKeys.swift"; sourceTree = "<group>"; };
@@ -141,7 +139,7 @@
 		0EA6D93A250DA9CF0086DCB7 /* GroupedTransactionsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedTransactionsSection.swift; sourceTree = "<group>"; };
 		0EA6D93D250DB3D80086DCB7 /* NumberFormatter+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Helpers.swift"; sourceTree = "<group>"; };
 		0EA6D940250DCDF40086DCB7 /* LocalStubbedDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStubbedDataService.swift; sourceTree = "<group>"; };
-		0EA6D942250DDC470086DCB7 /* account_data_modified.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = account_data_modified.json; sourceTree = "<group>"; };
+		0EA6D942250DDC470086DCB7 /* account_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = account_data.json; sourceTree = "<group>"; };
 		0EA6D944250DE4F40086DCB7 /* AccountDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsHeaderView.swift; sourceTree = "<group>"; };
 		0EA6D946250DE57D0086DCB7 /* AccountDetailsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountDetailsHeaderView.xib; sourceTree = "<group>"; };
 		0EA6D94B250E3C610086DCB7 /* AccountDetailsTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsTransformer.swift; sourceTree = "<group>"; };
@@ -275,8 +273,7 @@
 		0E5B1DFD250C2A9B00A6A724 /* ResoureFiles */ = {
 			isa = PBXGroup;
 			children = (
-				0E5B1DFE250C2AB100A6A724 /* account_data.json */,
-				0EA6D942250DDC470086DCB7 /* account_data_modified.json */,
+				0EA6D942250DDC470086DCB7 /* account_data.json */,
 			);
 			path = ResoureFiles;
 			sourceTree = "<group>";
@@ -605,10 +602,9 @@
 			files = (
 				0E5B1DE5250C246600A6A724 /* LaunchScreen.storyboard in Resources */,
 				0E59B719250CF6D500DF7162 /* TransctionSectionHeaderView.xib in Resources */,
-				0EA6D943250DDC470086DCB7 /* account_data_modified.json in Resources */,
+				0EA6D943250DDC470086DCB7 /* account_data.json in Resources */,
 				0E5B1E0A250C31D000A6A724 /* MyBank.strings in Resources */,
 				0E5B1E2C250C62D900A6A724 /* TransactionCell.xib in Resources */,
-				0E5B1DFF250C2AB100A6A724 /* account_data.json in Resources */,
 				0EA6D947250DE57D0086DCB7 /* AccountDetailsHeaderView.xib in Resources */,
 				0E5B1DE2250C246600A6A724 /* Assets.xcassets in Resources */,
 				0E5B1DE0250C246500A6A724 /* Main.storyboard in Resources */,
