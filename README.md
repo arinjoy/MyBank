@@ -107,11 +107,10 @@ These domain level models get mapped into presentation level models at presentat
  - All font & colours are used from a central Theme provider
  - Colors have dark mode support
  - Dynamic scaling of the fonts are supported
-  ![](/Screenshots/screenshot-9.png "")
 
 ### Use of SwiftUI (experimental feature on map)
 - A custom SwiftUI view is made for the ATM map
 - This follows the coordinator pattern to talk to MapKit delegate
 - A custom pin image has been attached to the annotation
 - The code is kept very simple and not unit tested
-![](/Screenshots/screenshot-9.png "")
+![](/Screenshots/screenshot-3.png "")
