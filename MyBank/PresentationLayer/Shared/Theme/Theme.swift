@@ -36,22 +36,22 @@ struct Theme {
         
         /// Making it 22pt to make it look bigger. 18pt might be a bit small, compared to rest below which are 16pt
         static let title: UIFont = {
-            let titleFont = UIFont(name: "HelveticaNeue-Light", size: 22) ?? UIFont.systemFont(ofSize: 22, weight: .light)
+            let titleFont = UIFont(name: "AvenirNext-Regular", size: 22) ?? UIFont.systemFont(ofSize: 22, weight: .light)
             return UIFontMetrics(forTextStyle: .title1).scaledFont(for: titleFont)
         }()
         
         static let subheading: UIFont = {
-            let titleFont = UIFont(name: "HelveticaNeue-Medium", size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .medium)
+            let titleFont = UIFont(name: "AvenirNext-Medium", size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .medium)
             return UIFontMetrics(forTextStyle: .subheadline).scaledFont(for: titleFont)
         }()
         
         static let body: UIFont = {
-            let titleFont = UIFont(name: "HelveticaNeue", size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .regular)
+            let titleFont = UIFont(name: "AvenirNext-Regular", size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .regular)
             return UIFontMetrics(forTextStyle: .body).scaledFont(for: titleFont)
         }()
         
         static let footnote: UIFont = {
-            let titleFont = UIFont(name: "HelveticaNeue-Light", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .light)
+            let titleFont = UIFont(name: "AvenirNext-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .light)
             return UIFontMetrics(forTextStyle: .footnote).scaledFont(for: titleFont)
         }()
     }
