@@ -40,7 +40,7 @@ final class TransactionCell: UITableViewCell, NibProvidable, ReusableView {
     // MARK: - Configuration
     
     func configure(withPresentationItem item: TransactionPresentationItem) {
-        atmIconWidthConstraint.constant = item.atmIcon != nil ? 50 : 0
+        atmIconWidthConstraint.constant = item.atmIcon != nil ? 45 : 0
         descriptionLabel.attributedText = item.description
         amountLabel.text = item.amountText
         

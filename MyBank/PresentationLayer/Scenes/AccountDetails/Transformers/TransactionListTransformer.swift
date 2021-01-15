@@ -74,7 +74,7 @@ struct TransactionListTransformer: DataTransforming {
             id: transaction.id,
             description: attributedDescription,
             amountText: signedAmount,
-            atmIcon: isAtmTransaction ? UIImage(named: "FindUsIcon")! : nil,
+            atmIcon: isAtmTransaction ? Theme.Icon.atmTransaction.image : nil,
             accessibility: accessibility)
     }
 }

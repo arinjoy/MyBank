@@ -144,7 +144,7 @@ final class AccountDetailsPresenter: AccountDetailsPresenting {
         }
         let atmMapViewModel = ATMMapViewModel(viewTitle: StringKeys.MyBank.atmMapViewTitle.localized(),
                                               atmLocation: atmLocation,
-                                              customPinImage: UIImage(named: "CBAFindUsAnnotationIconATM")!)
+                                              customPinImage: Theme.Icon.atmFindUsPin.image)
         
         router?.routeToAtmLocationMap(withAtmMapViewModel: atmMapViewModel)
     }

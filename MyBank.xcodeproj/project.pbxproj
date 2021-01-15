@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1E37D725B1347E00CE7BE5 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E37D625B1347E00CE7BE5 /* Icon.swift */; };
 		0E59B719250CF6D500DF7162 /* TransctionSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E59B717250CF6D500DF7162 /* TransctionSectionHeaderView.xib */; };
 		0E59B71A250CF6D500DF7162 /* TransctionSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E59B718250CF6D500DF7162 /* TransctionSectionHeaderView.swift */; };
 		0E59B71D250CFF6300DF7162 /* AccountDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E59B71C250CFF6300DF7162 /* AccountDetailsInteractor.swift */; };
@@ -88,6 +89,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E1E37D625B1347E00CE7BE5 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		0E59B717250CF6D500DF7162 /* TransctionSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransctionSectionHeaderView.xib; sourceTree = "<group>"; };
 		0E59B718250CF6D500DF7162 /* TransctionSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransctionSectionHeaderView.swift; sourceTree = "<group>"; };
 		0E59B71C250CFF6300DF7162 /* AccountDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsInteractor.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				0E5B1E02250C2B4B00A6A724 /* Theme.swift */,
+				0E1E37D625B1347E00CE7BE5 /* Icon.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				0E5B1E31250C6BF600A6A724 /* UITableView+Common.swift in Sources */,
 				0E5B1E42250CBEEB00A6A724 /* AccountDetailsPresenter.swift in Sources */,
 				0E5B1E1C250C3B8600A6A724 /* Publisher+Extensions.swift in Sources */,
+				0E1E37D725B1347E00CE7BE5 /* Icon.swift in Sources */,
 				0E5B1E08250C30AA00A6A724 /* MyBank+StringKeys.swift in Sources */,
 				0E59B720250D01CB00DF7162 /* DomainModels.swift in Sources */,
 				0E5B1DDD250C246500A6A724 /* AccountDetailsViewController.swift in Sources */,

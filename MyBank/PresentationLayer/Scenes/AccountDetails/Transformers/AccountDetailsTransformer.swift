@@ -13,10 +13,6 @@ struct AccountDetailsTransformer: DataTransforming {
     
     func transform(input: AccountDetails) -> AccountDetailsPresentationItem {
         
-        // Perform some safety check just in case. And flag them with reasoning message rather than bang crash with force-unwrap
-        guard let accountIcon = UIImage(named: "accountsimagetransactional") else {
-            fatalError("Icon image cannot be found")
-        }
         guard let availableBalanceText = NumberFormatterHelper.signedCurrency.string(from: input.availableBalance as NSNumber) else {
             fatalError("Available balance cannot be formatted")
         }
@@ -38,7 +34,7 @@ struct AccountDetailsTransformer: DataTransforming {
             traits: .header)
         
         return AccountDetailsPresentationItem(
-            accountTypeIcon: accountIcon,
+            accountTypeIcon: Theme.Icon.bankAccount.image,
             accountDisplayName: input.name,
             accountNumber: input.number,
             availableBalanceLabel: availableBalanceLabel,

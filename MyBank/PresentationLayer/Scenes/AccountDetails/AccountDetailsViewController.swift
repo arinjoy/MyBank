@@ -47,7 +47,7 @@ final class AccountDetailsViewController: UIViewController, AccountDetailsDispla
         // - `localStubbedProvider` - local mock data from JSON file
         // - `defaultProvider` - real network based data from defined endpoint
         
-        var networkService = ServicesProvider.defaultProvider().network
+        var networkService = ServicesProvider.localStubbedProvider().network
         
 #if DEBUG
         if CommandLine.arguments.contains("UITestingMode") {
