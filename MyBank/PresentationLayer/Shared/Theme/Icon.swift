@@ -30,7 +30,7 @@ extension Theme {
         
         // MARK: - Private helper
         
-        private func tintedImage(named imageName: String, andColor color: UIColor = Theme.Color.sunflower) -> UIImage {
+        private func tintedImage(named imageName: String, andColor color: UIColor = Theme.Color.leafyGreen) -> UIImage {
             guard let image = UIImage(named: imageName) else {
                 fatalError("\(imageName) cannot be found is asset catalog!")
             }

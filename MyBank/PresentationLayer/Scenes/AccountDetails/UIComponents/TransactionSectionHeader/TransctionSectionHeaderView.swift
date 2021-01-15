@@ -43,7 +43,7 @@ final class TransctionSectionHeaderView: UITableViewHeaderFooterView {
         subtitleLabel.textColor = Theme.Color.headerText
         
         self.backgroundView = UIView(frame: self.bounds)
-        self.backgroundView?.backgroundColor = Theme.Color.sunflower
+        self.backgroundView?.backgroundColor = Theme.Color.lightGreen
         
         isAccessibilityElement = true
     }

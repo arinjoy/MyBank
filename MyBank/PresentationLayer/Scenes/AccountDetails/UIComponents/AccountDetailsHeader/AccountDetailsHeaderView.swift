@@ -65,7 +65,7 @@ class AccountDetailsHeaderView: UIView {
     // MARK: - Private Helpers
     
     private func applyStyles() {
-        accountTypeIconView.tintColor = Theme.Color.sunflower
+        accountTypeIconView.tintColor = Theme.Color.leafyGreen
         contentView.backgroundColor = Theme.Color.tealBackground
         bottomContainerView.backgroundColor = Theme.Color.greyBackground
         separatorLineView.backgroundColor = Theme.Color.tealBackground.withAlphaComponent(0.3)

@@ -20,13 +20,15 @@ struct Theme {
                                            dark: UIColor.white.withAlphaComponent(0.6))
         static let headerText = UIColor.colorFrom(red: 35, green: 31, blue: 32)
 
-        static let sunflower = UIColor.colorFrom(red: 255, green: 204, blue: 0)
-        static let tealBackground = UIColor.colorFrom(red: 146, green: 176, blue: 176)
+        static let leafyGreen = UIColor.colorFrom(red: 46, green: 175, blue: 70)
+        static let lightGreen = UIColor.colorFrom(red: 141, green: 215, blue: 156)
+        
+        static let tealBackground = UIColor.colorFrom(red: 135, green: 158, blue: 126)
         static let greyBackground =  UIColor(light: UIColor.colorFrom(red: 246, green: 246, blue: 246),
                                              dark: UIColor.systemGray4)
         
         // TODO: possibly tweak this for dark mode
-        static let tint = UIColor(light: Theme.Color.sunflower, dark: Theme.Color.sunflower)
+        static let tint = UIColor(light: Theme.Color.leafyGreen, dark: Theme.Color.leafyGreen)
         static let background =  UIColor(light: UIColor.white, dark: UIColor.black)
     }
 
